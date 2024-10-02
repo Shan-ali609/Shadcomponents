@@ -34,6 +34,7 @@ import Resizable from "./usercomp/Resizable";
 import Scrollarea from "./usercomp/Scrollarea";
 import Select from "./usercomp/Select";
 import Separator from "./usercomp/Separator";
+import Sheet from "./usercomp/Sheet";
 
 
 
@@ -251,7 +252,13 @@ const components = [
         slug : 'separator',
         text : 'Powerful table and datagrids built using TanStack Table.',
         Component: Separator
-    },  
+    },
+    {
+        Name : 'Sheet',
+        slug : 'sheet',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Sheet
+    },    
     
 ];
 
