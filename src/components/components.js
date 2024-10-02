@@ -35,6 +35,12 @@ import Scrollarea from "./usercomp/Scrollarea";
 import Select from "./usercomp/Select";
 import Separator from "./usercomp/Separator";
 import Sheet from "./usercomp/Sheet";
+import Slider from "./usercomp/Slider";
+import Switch from "./usercomp/Switch";
+import Textarea from "./usercomp/Textarea";
+import Tooltip from "./usercomp/Tooltip";
+import Toggle from "./usercomp/Toggle";
+import Togglegroup from "./usercomp/Togglegroup";
 
 
 
@@ -258,7 +264,43 @@ const components = [
         slug : 'sheet',
         text : 'Powerful table and datagrids built using TanStack Table.',
         Component: Sheet
-    },    
+    },  
+    {
+        Name : 'Slider',
+        slug : 'slider',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Slider
+    },
+    {
+        Name : 'Switch',
+        slug : 'switch',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Switch
+    }, 
+    {
+        Name : 'Textarea',
+        slug : 'textarea',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Textarea
+    }, 
+    {
+        Name : 'Toggle',
+        slug : 'toggle',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Toggle
+    }, 
+    {
+        Name : 'Toggle Group',
+        slug : 'toggle-group',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Togglegroup
+    }, 
+    {
+        Name : 'Tooltip',
+        slug : 'tooltip',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Tooltip
+    },     
     
 ];
 
