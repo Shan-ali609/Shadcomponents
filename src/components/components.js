@@ -30,6 +30,10 @@ import Pagination from "./usercomp/Pagination";
 import Popover from "./usercomp/Popover";
 import Progress from "./usercomp/Progress";
 import Radiogroup from "./usercomp/Radiogroup";
+import Resizable from "./usercomp/Resizable";
+import Scrollarea from "./usercomp/Scrollarea";
+import Select from "./usercomp/Select";
+import Separator from "./usercomp/Separator";
 
 
 
@@ -224,6 +228,31 @@ const components = [
         text : 'Powerful table and datagrids built using TanStack Table.',
         Component: Radiogroup
     },  
+    {
+        Name : 'Resizable',
+        slug : 'resizable',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Resizable
+    }, 
+    {
+        Name : 'Scroll-area',
+        slug : 'scroll-area',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Scrollarea
+    },  
+    {
+        Name : 'Select',
+        slug : 'select',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Select
+    }, 
+    {
+        Name : 'Separator',
+        slug : 'separator',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Separator
+    },  
+    
 ];
 
 
