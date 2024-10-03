@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import Popupform from '../pagecomp/Popupform';
 
-export default function Alertdialog({nameprop , sheetcond , dialprop }) {
+export default function Alertdialog({nameprop , sheetcond , dialprop,accountbtn }) {
     const [openit, setOpenit] = useState(false);
 
     const isopen = () => setOpenit(true);
@@ -19,7 +19,7 @@ export default function Alertdialog({nameprop , sheetcond , dialprop }) {
                 </div>
             </div>
             {openit && (
-                <Popupform  dialprop = {dialprop} sheetcond={sheetcond} onClose={isclose} />
+                <Popupform  dialprop = {dialprop} sheetcond={sheetcond} accountbtn={accountbtn} onClose={isclose} />
             )}
         </>
     );

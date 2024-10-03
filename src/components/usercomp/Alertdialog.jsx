@@ -3,7 +3,7 @@
   export default function Alertdialog() {
     return (
       <div>
-           <Alertdialogreuse nameprop = "Show Dialog" />
+           <Alertdialogreuse nameprop = "Show Dialog" accountbtn={true} />
       </div>
     )
   }

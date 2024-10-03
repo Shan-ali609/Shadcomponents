@@ -13,7 +13,7 @@ export default function Maintitle({title,para}) {
         <h3>{title}</h3>
       </div>
       <h1 className='head-section'>{title}</h1>
-      <p className='detail'>{para}</p>
+      <p className='detail text-gray-400'>{para}</p>
        
          <div className='pt-3  pb-10' >
           <div className='inline-block'> <Link href = "" className=' flex items-center bg-neutral-100 text-xs px-2 font-semibold text-gray-600 '>Docs <span><IoMdOpen className='font-light' /></span> </Link> </div>

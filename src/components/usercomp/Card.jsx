@@ -23,20 +23,20 @@ export default function Card() {
   };
   return (
     <>
-      <div className="w-80 h-[300px] border rounded-md shadow-md">
+      <div className="w-80 h-[299px] border rounded-md shadow-md">
         <div>
           <div className='flex flex-col px-4 py-4 '>
 
             <h1 className='text-lg font-semibold'>Create project</h1>
             <p className='text-gray-400 text-[16px]'>Deploy your new project in one-click.</p>
-            <h5 className='text-lg pt-4 '>Name</h5>
-            <input  className="w-full border-2 border-gray-400 rounded-md pl-2 mt-1  focus:outline-none" type="text"   placeholder="name" />
+            <h5 className='text-md pt-4 '>Name</h5>
+            <input  className="w-full border border-gray-400 rounded-md pl-2 text-md h-10 mt-1  focus:outline-none" type="text"   placeholder="Name of your project " />
 
-            <h5 className='text-lg pt-4 pb-2'>Framework</h5>
+            <h5 className='text-md pt-4 '>Framework</h5>
 
             <div className="relative">
               <div
-                className="cursor-pointer border w-full h-8 px-2 flex  items-center rounded-md justify-between"
+                className="cursor-pointer border w-full h-10 px-2 flex  items-center rounded-md justify-between"
                 onClick={toggleDropdown}
               >
                 <h4 className=" text-md flex ">
@@ -62,7 +62,7 @@ export default function Card() {
           
 
             <div className="flex justify-between mt-4">
-        <button  className="border px-3 py-2 rounded-md bg-gray-300 hover:bg-gray-400">
+        <button  className="border px-3 py-1 rounded-md bg-gray-300 hover:bg-gray-400">
           Cancel
         </button>
         <button className="ml-3 border px-3 py-1 text-white rounded-md bg-black">
