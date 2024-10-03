@@ -41,6 +41,8 @@ import Textarea from "./usercomp/Textarea";
 import Tooltip from "./usercomp/Tooltip";
 import Toggle from "./usercomp/Toggle";
 import Togglegroup from "./usercomp/Togglegroup";
+import Sooner from "./usercomp/Sooner";
+import Table from "./usercomp/Table";
 
 
 
@@ -300,6 +302,18 @@ const components = [
         slug : 'tooltip',
         text : 'Powerful table and datagrids built using TanStack Table.',
         Component: Tooltip
+    }, 
+    {
+        Name : 'Sonner',
+        slug : 'sonner',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Sooner
+    },
+    {
+        Name : 'Table',
+        slug : 'table',
+        text : 'Powerful table and datagrids built using TanStack Table.',
+        Component: Table
     },     
     
 ];

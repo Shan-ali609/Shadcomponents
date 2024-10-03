@@ -18,19 +18,26 @@ export default function MyDropdown({ data, cond }) {
   return (
     <div className='relative'>
       <div
-        className={` ${cond ? "w-44 cursor-pointer h-6 flex items-center border rounded-md justify-center" : "cursor-pointer rounded-md border w-36 pl-2"} `}
+        className={` ${cond ? "w-44 cursor-pointer h-6 flex justify-between border rounded-md " : "cursor-pointer  flex rounded-md border w-36 pl-2"} `}
         onClick={toggleDropdown}
       >
-        <h4 className={`${cond ? "flex items-center justify-between text-lg " : "text-xs flex justify-between items-center text-gray-500"}`}>
-          <span className={` ${cond ? " text-gray-700 text-[12px] mr-10  " : "text-gray-400 text-xs pr-4 "}`}> 
+        <h4 className={`${cond ? "flex  text-md w-36  pl-1 " : "text-xs flex w-28 items-center text-gray-500"}`}>
+        
+          <span className={` ${cond ? " text-gray-700 text-[12px]   " : "text-gray-400 text-xs pr-4 "}`}> 
             {cond ? "" : "Style:"} 
           </span>
+        
           {selectedOption}
-          <Mybutton className={cond ? "text-gray-400" : "text-gray-400"} />
-        </h4>
+          </h4>
+          <Mybutton className={cond ? "text-gray-400  " : "text-gray-400"} />
+        
+      
+     
       </div>
+  
+     
       {isOpen && (
-        <div className={` ${cond ? "absolute z-10 bg-white border rounded-md w-44" : "absolute z-10 bg-white border rounded-md w-36"} `}>
+        <div className={` ${cond ? "absolute z-10  bottom-full bg-white border rounded-md w-44" : "absolute z-10 bg-white border rounded-md w-36"} `}>
           {cond && (
             <input
               type="text"

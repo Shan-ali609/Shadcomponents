@@ -1,10 +1,10 @@
 import React from "react";
-import Alertdialog from "./Alertdialog";
+import Alertdialogreuse from "@/components/pagecomp/Alertdialogreuse";
 
-export default function Dialog({ sheetcond }) {
+export default function Dialog() {
   return (
     <>
-      <Alertdialog nameprop={true} sheetcond={sheetcond} />
+      <Alertdialogreuse  nameprop="Edit Profile" dialprop = {true} />
     </>
   );
 }
