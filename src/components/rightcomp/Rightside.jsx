@@ -10,11 +10,11 @@ export default function Rightside() {
   return (
     <div className='ml-3 mt-5 '>
       <ul >
-        <li className='mt-1 mb-1 text-black'  > 
+        <li className='mt-1 mb-1 text-black dark:text-white'  > 
           <Link href=''>On This Page</Link> </li>
 
         <li 
-        className={`mt-1 mb-1  ${selecteditem === 'installation' ? 'text-black' : 'text-slate-300'} `}
+        className={`mt-1 mb-1 dark:text-white ${selecteditem === 'installation' ? 'text-black' : 'text-slate-300'} `}
         onClick={()=>handleitem('installation')}
         > <Link href=''>installation</Link> </li>
 

@@ -32,7 +32,7 @@ export default function Carousel() {
   return (
     <>
       <div className='flex justify-center items-center gap-8'>
-        <div className='preimg cursor-pointer border px-2 py-2 rounded-xl' onClick={preimg}>
+        <div className='preimg cursor-pointer border px-2 py-2 rounded-xl dark:text-white' onClick={preimg}>
           <FaArrowLeft />
         </div>
 
@@ -47,7 +47,7 @@ export default function Carousel() {
           <Image className='h-[340px] object-cover' src={images[currentimg]} alt='images' width={400} height={300} />
         </div>
 
-        <div className='nextimg cursor-pointer border px-2 py-2 rounded-xl' onClick={nextimg}>
+        <div className='nextimg cursor-pointer border px-2 py-2 rounded-xl dark:text-white' onClick={nextimg}>
           <FaArrowRight />
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function Page({ params }) {
             <div className=' w-full   mt-9 border-2 rounded-lg h-[450px]'>
                 <div className='w-full  flex justify-between px-5 py-3 '>
                     <div><MyDropdown data={['Default','New york' ]} /> </div>
-                    <div className='border-2  flex items-center rounded-sm'> <AiOutlineInbox className='text-md cursor-pointer  text-black ' /></div>
+                    <div className='border-2  flex items-center rounded-sm'> <AiOutlineInbox className='text-md cursor-pointer dark:text-white  text-black ' /></div>
                             </div>
                 <div className=' w-full flex content-center items-center h-[409px]  '>
                 <div className='h-screen w-full flex justify-center items-center'> 

@@ -1,12 +1,13 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { SlArrowDown } from "react-icons/sl";
-
 import '@/components/pagecomp/main.css';
 
-export default function Accordion() {
-  const [activeIndex, setActiveIndex] = useState(null);
 
+export default function Accordion() {
+  
+  const [activeIndex, setActiveIndex] = useState(null);
+     
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -24,14 +25,14 @@ export default function Accordion() {
   {accordionItems.map((item, index) => (
     <div key={index} className='  w-full border-b last:border-b-0'> 
       <div
-        className='flex justify-between items-center p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200' 
+        className='flex justify-between items-center p-4 cursor-pointer dark:hover:bg-black hover:bg-gray-100 transition-colors duration-200' 
         onClick={() => toggleAccordion(index)}
       >
-        <h4 className='text-sm '>{item.title}</h4> 
-        <SlArrowDown className={`transform transition-transform duration-200 ${activeIndex === index ? 'rotate-180' : ''}`} /> 
+        <h4 className='text-sm dark:text-white '>{item.title} </h4> 
+        <SlArrowDown className={`transform transition-transform duration-200 dark:text-white ${activeIndex === index ? 'rotate-180' : ''}`} /> 
       </div>
       {activeIndex === index && (
-        <div className={`p-4 bg-gray-50 ${activeIndex === index ? 'open' : ''}`}> 
+        <div className={`px-4 bg-gray-50 dark:bg-black dark:text-white ${activeIndex === index ? 'open' : ''}`}> 
           <p>{item.content}</p>
         </div>
       )}

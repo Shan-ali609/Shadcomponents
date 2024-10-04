@@ -1,20 +1,16 @@
-"use client"
-import localFont from "next/font/local";
+"use client";
 import "./globals.css";
 import Leftside from "../components/leftcomp/Leftside";
 import Rightside from "../components/rightcomp/Rightside";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer/Footer";
-import React,{useState , useEffect} from "react";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+import { Raleway } from "next/font/google";
+import React, { useState, useEffect } from "react";
+import AppState from "@/components/contextApi/AppState";
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-raleway",
 });
 
 // export const metadata = {
@@ -23,48 +19,52 @@ const geistMono = localFont({
 // };
 
 export default function RootLayout({ children }) {
-  const [isrightvisible , setisrightvisible] = useState(true);
-  const [isleftvisible , setisleftvisible] = useState(true);
-    
-    useEffect(()=>{
-     const hanldeResize = ()=>{
-       setisrightvisible(window.innerWidth >= 1280)
-       setisleftvisible(window.innerWidth >=768)
-       }
-       hanldeResize();
-       window.addEventListener('resize', hanldeResize);
-       return ()=>{
-        window.removeEventListener('resize', hanldeResize)
-       }
-    },[])
+  const [isrightvisible, setisrightvisible] = useState(true);
+  const [isleftvisible, setisleftvisible] = useState(true);
+
+  useEffect(() => {
+    const hanldeResize = () => {
+      setisrightvisible(window.innerWidth >= 1280);
+      setisleftvisible(window.innerWidth >= 768);
+    };
+    hanldeResize();
+    window.addEventListener("resize", hanldeResize);
+    return () => {
+      window.removeEventListener("resize", hanldeResize);
+    };
+  }, []);
 
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={raleway.variable}
       >
-       
-        <Navbar />
-        <div className={` max-w-screen  grid 
-          ${isleftvisible ? 'grid-cols-[300px_1fr]' : 'grid-cols-[6fr]' } 
-          ${isrightvisible ? ' grid-cols-[300px_1fr_330px]' : ' grid-cols-[300px_1fr]' } ` }>
-          <div className="  overflow-auto h-screen sticky hidden md:block  top-0 mt-12">
-             <Leftside />
-          </div>
+        <AppState>
+          <Navbar />
+          <div
+            className={` max-w-screen  grid 
+          ${isleftvisible ? "grid-cols-[300px_1fr]" : "grid-cols-[6fr]"} 
+          ${
+            isrightvisible
+              ? " grid-cols-[300px_1fr_330px]"
+              : " grid-cols-[300px_1fr]"
+          } `}
+          >
+            <div className="  overflow-auto h-screen sticky dark:bg-black hidden md:block  top-0 mt-12">
+              <Leftside />
+            </div>
 
-          <div className="    bg-white   px-9  ">
-            {children}
+            <div className="    bg-white dark:bg-black  px-9  ">{children}</div>
+            <div className="  sticky top-0  mt-12 h-screen dark:bg-black hidden xl:block  ">
+              {" "}
+              <Rightside />
+            </div>
           </div>
-          <div className="  sticky top-0  mt-12 h-screen hidden xl:block  "> <Rightside />
+          <div>
+            <Footer />
           </div>
-        </div>
-
-          
-
-        <div >
-          <Footer />
-        </div>
-        
+        </AppState>
       </body>
     </html>
   );

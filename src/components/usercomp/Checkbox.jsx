@@ -5,8 +5,8 @@
       <div>
           
           <div className='flex gap-2'>
-            <input className='cursor-pointer' type='checkbox' />
-            <h1 className='font-bold'>Accept term and conditions</h1>
+            <input className='cursor-pointer dark:border-2 ' type='checkbox' />
+            <h1 className='font-bold dark:text-white'>Accept term and conditions</h1>
           </div>
       </div>
     )

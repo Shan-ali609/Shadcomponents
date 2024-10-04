@@ -17,3 +17,9 @@ body {
     --radius: 0.5rem;
   }
 }
+.raleway{
+  font-family: var(--font-raleway);
+}
+.close-btn.open {
+  left: 0;
+}

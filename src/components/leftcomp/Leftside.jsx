@@ -15,7 +15,7 @@ export default function Leftside() {
           onClick={()=>setselectedid(data.id)}
           className= {`left-li  ${selectedid === data.id ? "shan" : ""}`}
           >
-            <Link className="left-a" href={`/component/${data.id}` }>
+            <Link className=" raleway  left-a dark:text-white " href={`/component/${data.id}` }>
               {data.name}
             </Link>
           </li>
@@ -24,4 +24,6 @@ export default function Leftside() {
     </div>
   );
 }
+
+
 

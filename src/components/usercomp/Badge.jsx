@@ -6,7 +6,7 @@ export default function Badge() {
 
 
      <div className='h-screen w-full flex justify-center items-center'>
-     <p className='bg-black text-white px-3 py-[3px] rounded-md text-[11px]'>Badge</p>
+     <p className='bg-black dark:bg-white dark:text-black text-white px-4 py-[4px] rounded-lg text-[11px]'>Badge</p>
       
      </div>
     </>

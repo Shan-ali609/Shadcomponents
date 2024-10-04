@@ -27,30 +27,30 @@ export default function Card() {
         <div>
           <div className='flex flex-col px-4 py-4 '>
 
-            <h1 className='text-lg font-semibold'>Create project</h1>
-            <p className='text-gray-400 text-[16px]'>Deploy your new project in one-click.</p>
-            <h5 className='text-md pt-4 '>Name</h5>
-            <input  className="w-full border border-gray-400 rounded-md pl-2 text-md h-10 mt-1  focus:outline-none" type="text"   placeholder="Name of your project " />
+            <h1 className='text-lg font-semibold dark:text-white '>Create project</h1>
+            <p className='text-gray-400 text-[16px] dark:text-gray-400 '>Deploy your new project in one-click.</p>
+            <h5 className='text-md pt-4 dark:text-white '>Name</h5>
+            <input  className="w-full border border-gray-400 rounded-md pl-2 text-md h-10 mt-1 dark:text-white  dark:placeholder:text-gray-400 dark:bg-slate-900  focus:outline-none" type="text"   placeholder="Name of your project " />
 
-            <h5 className='text-md pt-4 '>Framework</h5>
+            <h5 className='text-md pt-4 dark:text-white  '>Framework</h5>
 
             <div className="relative">
               <div
                 className="cursor-pointer border w-full h-10 px-2 flex  items-center rounded-md justify-between"
                 onClick={toggleDropdown}
               >
-                <h4 className=" text-md flex ">
+                <h4 className=" text-md flex dark:text-white ">
                   {selectedOption}{" "}
                 
                 </h4>
-                <HiChevronDoubleDown className="text-gray-400" />
+                <HiChevronDoubleDown className="text-gray-400 dark:text-white" />
               </div>
               {isOpen && (
-                <div className="absolute z-10 bg-white border rounded-md w-full">
+                <div className="absolute z-10 bg-white dark:bg-black border rounded-md w-full">
                   {options.map((option, index) => (
                     <div
                       key={index}
-                      className="px-6 py-2 cursor-pointer hover:bg-gray-200"
+                      className="px-6 py-2 cursor-pointer hover:bg-gray-200 dark:text-white dark:hover:bg-gray-400"
                       onClick={() => handleOptionClick(option)}
                     >
                       {option.label}
