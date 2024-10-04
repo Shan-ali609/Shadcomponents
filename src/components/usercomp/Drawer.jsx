@@ -26,7 +26,7 @@ export default function Drawer() {
   return (
     <div className="relative">
       <button
-        className="px-4 py-2  text-black border rounded-lg"
+        className="px-4 py-2  text-black border rounded-lg dark:text-white"
         onClick={toggleDrawer}
       >
         Open Drawer

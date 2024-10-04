@@ -25,8 +25,8 @@ export default function Page({ params }) {
                     <div><MyDropdown data={['Default','New york' ]} /> </div>
                     <div className='border-2  flex items-center rounded-sm'> <AiOutlineInbox className='text-md cursor-pointer dark:text-white  text-black ' /></div>
                             </div>
-                <div className=' w-full flex content-center items-center h-[409px]  '>
-                <div className='h-screen w-full flex justify-center items-center'> 
+                <div className=' w-full flex content-center items-center h-[409px]   '>
+                <div className='h-auto w-full flex justify-center items-center'> 
             <ComponentToRender drp={component.list} /> 
             </div>
             </div> 

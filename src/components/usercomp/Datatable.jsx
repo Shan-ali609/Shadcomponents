@@ -41,7 +41,7 @@ export default function Datatable() {
 
         
 
-        <div className="flex items-center gap-36 border mt-5 pl-2">
+        <div className="flex items-center gap-36 border mt-5 pl-2 dark:text-white">
           <div className="flex items-center gap-8 py-2"> 
             <input type="checkbox" />
            <h2>Status</h2>
@@ -52,7 +52,7 @@ export default function Datatable() {
 
         
          {data.map((item,index)=>(    
-        <div className="flex items-center gap-36 border pl-2 " key={index}>
+        <div className="flex items-center gap-36 border pl-2 dark:text-white " key={index}>
           <div className="flex items-center gap-8 py-4">
           <input type="checkbox" />
           <h2>{item.statusbar}</h2> 

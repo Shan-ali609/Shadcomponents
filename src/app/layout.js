@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
               <Rightside />
             </div>
           </div>
-          <div>
+          <div className="dark:bg-black">
             <Footer />
           </div>
         </AppState>
