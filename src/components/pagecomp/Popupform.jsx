@@ -15,7 +15,7 @@ export default function Popupform({
           sheetcond
             ? "fixed w-full inset-y-0 top-0 flex justify-end right-0  bg-gray-200 dark:bg-black dark:bg-opacity-50  bg-opacity-90 z-50"
             : accountform
-            ? " border  "
+            ? " border rounded-sm mt-2  "
             : "fixed inset-0 flex justify-center items-center bg-black bg-opacity-50"
         }`}
       >
@@ -23,7 +23,7 @@ export default function Popupform({
           className={`${
             dialprop
               ? accountform
-                ? "bg-white  px-7 py-6 rounded-md shadow-md max-w-[400px] "
+                ? "bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  "
                 : "bg-white p-6 rounded-md shadow-md max-w-[450px] dark:bg-black dark:border "
               : "bg-white p-6 rounded-md shadow-md max-w-[600px] dark:bg-black dark:border "
           }`}
@@ -39,7 +39,7 @@ export default function Popupform({
           </h2>
           <p
             className={`${
-              dialprop ? "text-[15px] text-gray-500 " : "dark:text-gray-200"
+              dialprop ? "text-[15px] text-gray-500 dark:text-gray-200 " : "dark:text-gray-200"
             }`}
           >
             {dialprop
@@ -62,7 +62,7 @@ export default function Popupform({
                 <input
                   className={`${
                     accountform
-                      ? " border-2 rounded-sm pl-2 w-full"
+                      ? " border-2 rounded-sm pl-2 w-full dark:bg-black"
                       : "border-2 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white "
                   }`}
                   type="text"
@@ -81,7 +81,7 @@ export default function Popupform({
                 <input
                   className={`${
                     accountform
-                      ? " border-2 rounded-sm pl-2 w-full"
+                      ? " border-2 rounded-sm pl-2 w-full dark:bg-black"
                       : "border-2 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white "
                   }`}
                   type="text"

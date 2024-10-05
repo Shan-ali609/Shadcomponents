@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Textarea() {
   return (
-    <div className='w-full px-5  py-28 '>
-      <textarea className='h-11 w-full border-2 pl-3 py-28 overflow-hidden '></textarea>
+    <div className='w-full px-5   '>
+      <textarea className=' w-full border-2 pl-3 overflow-hidden dark:bg-black dark:text-white' placeholder='Type your message here' >Type your message here</textarea>
     </div>
   )
 }

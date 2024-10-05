@@ -13,7 +13,7 @@ export default function Table() {
     return (
         <div className='w-full'>
             
-            <div className='flex justify-between border-b pb-3  mx-16  text-gray-400'>
+            <div className='flex justify-between border-b pb-3  mx-16  text-gray-400 dark:text-white'>
                 <h1 className='w-1/4'>Invoice</h1>
                 <h1 className='w-1/4'>Status</h1>
                 <h1 className='w-1/4'>Method</h1>
@@ -21,7 +21,7 @@ export default function Table() {
             </div>
         
             {bankdetail.map((item, index) => (
-                <div key={index} className='flex justify-between mx-16 pt-4 border-b pb-3 text-gray-700'>
+                <div key={index} className='flex justify-between mx-16 pt-4 border-b pb-3 text-gray-700 dark:text-white'>
                     <h1 className='w-1/4'>{item.Inovice}</h1>
                     <h1 className='w-1/4'>{item.Status}</h1>
                     <h1 className='w-1/4'>{item.Method}</h1>

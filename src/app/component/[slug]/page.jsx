@@ -12,7 +12,7 @@ export default function Page({ params }) {
 
     
     if (!component) {
-        return <div className='mt-32 bold'>Component Not Found</div>;
+        return <div className='mt-32 bold dark:text-white'>Component Not Found</div>;
     }
 
     const ComponentToRender = component.Component;

@@ -9,18 +9,18 @@ const Switch = () => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center dark:text-white">
   
          
 
       <div
         onClick={toggleSwitch}
-        className={`relative inline-flex items-center w-12 h-6 bg-gray-300 rounded-full cursor-pointer transition-colors duration-300 
-          ${isOn ? 'bg-green-500' : 'bg-gray-300'}`}
+        className={`relative inline-flex items-center w-9 h-5 bg-gray-300 rounded-full cursor-pointer transition-colors duration-300 
+          ${isOn ? 'bg-green-500 dark:bg-white' : 'bg-gray-300 dark:bg-gray-400'}`}
       >
 
         <span
-          className={`absolute left-0 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300 
+          className={`absolute left-0 w-4 h-4 bg-white dark:bg-black rounded-full shadow-md transition-transform duration-300 
             ${isOn ? 'translate-x-full' : 'translate-x-0'}`}
         />
       </div>

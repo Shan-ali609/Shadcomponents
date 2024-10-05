@@ -46,6 +46,8 @@ import Toggle from "./usercomp/Toggle";
 import Togglegroup from "./usercomp/Togglegroup";
 import Sooner from "./usercomp/Sooner";
 import Table from "./usercomp/Table";
+import Skeleton from "./usercomp/Skeleton";
+import Toast from "./usercomp/Toast";
 
 
 
@@ -283,9 +285,19 @@ const components = [
         text : 'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
         Component: Tabs
     }, 
-
-
-
+       
+    {
+        Name : 'Skeleton',
+        slug : 'skeleton',
+        text : 'A control that allows the user to toggle between checked and not checked.',
+        Component: Skeleton
+    }, 
+    {
+        Name : 'Toast',
+        slug : 'toast',
+        text : 'A control that allows the user to toggle between checked and not checked.',
+        Component: Toast
+    }, 
 
     {
         Name : 'Switch',
