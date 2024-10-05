@@ -20,15 +20,15 @@ export default function Leftside() {
   };
 
   return (
-    <div className="left-container dark:bg-black">
+    <div className="left-container dark:bg-black ">
       <ul className="left-ul scroll-container">
         {Datacomp.map((data) => (
           <li
             key={data.id}
             onClick={() => handleSelect(data.id)}
-            className={`left-li ${selectedid === data.id ? "shan" : ""}`}
+            className={`left-li  ${selectedid === data.id ? "shan" : ""}`}
           >
-            <Link className="raleway left-a dark:text-white" href={`/component/${data.id}`}>
+            <Link className="raleway   left-a dark:text-white" href={`/component/${data.id}`}>
               {data.name}
             </Link>
           </li>

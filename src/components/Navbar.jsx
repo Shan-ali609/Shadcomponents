@@ -63,7 +63,7 @@ export default function Navbar() {
           <div>
             <Mysearch navsearch={true} />
           </div>
-          <FaGithub className="icon-con dark:text-white" />
+          <FaGithub  className="icon-con dark:text-white " />
           <FaXTwitter className="icon-con dark:text-white" />
 
         

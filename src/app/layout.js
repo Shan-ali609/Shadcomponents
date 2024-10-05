@@ -51,12 +51,12 @@ export default function RootLayout({ children }) {
               : " grid-cols-[300px_1fr]"
           } `}
           >
-            <div className="  overflow-auto h-screen sticky dark:bg-black hidden md:block  top-0 mt-12">
+            <div className="  overflow-auto h-screen sticky dark:bg-black hidden md:block  top-0 mt-[41px]">
               <Leftside />
             </div>
 
             <div className="    bg-white dark:bg-black  px-9  ">{children}</div>
-            <div className="  sticky top-0  mt-12 h-screen dark:bg-black hidden xl:block  ">
+            <div className="  sticky top-0  mt-[41px] h-screen dark:bg-black hidden xl:block  ">
               {" "}
               <Rightside />
             </div>
