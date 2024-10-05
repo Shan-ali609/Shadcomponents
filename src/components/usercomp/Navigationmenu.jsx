@@ -16,7 +16,7 @@ export default function Navigationmenu() {
     <div className="flex gap-11">
       
       <div 
-        className="relative text-[13px] flex items-center gap-3 cursor-pointer" 
+        className="relative text-[13px] flex items-center gap-3 cursor-pointer dark:text-white " 
         onMouseEnter={() => handleMouseEnter('gettingStarted1')} 
         onMouseLeave={handleMouseLeave}
       >
@@ -26,7 +26,7 @@ export default function Navigationmenu() {
         />
 
         {hoveredItem === 'gettingStarted1' && (
-          <div className="absolute top-full left-0  w-48 p-4 bg-white border rounded-lg shadow-lg">
+          <div className="absolute top-full left-0 dark:text-white dark:bg-black  w-48 p-4 bg-white border rounded-lg shadow-lg">
             <p>Getting Started 1 Content</p>
             <p>Additional Info</p>
           </div>
@@ -35,7 +35,7 @@ export default function Navigationmenu() {
       
     
       <div 
-        className="relative text-[13px] flex items-center gap-3 cursor-pointer" 
+        className="relative text-[13px] flex items-center gap-3 cursor-pointer dark:text-white" 
         onMouseEnter={() => handleMouseEnter('Components')} 
         onMouseLeave={handleMouseLeave}
       >
@@ -45,7 +45,7 @@ export default function Navigationmenu() {
         />
 
         {hoveredItem === 'Components' && (
-          <div className="absolute top-full left-0 w-48 p-4 bg-white border rounded-lg shadow-lg hover:bg-slate-300">
+          <div className="absolute top-full left-0 w-48 p-4 dark:text-white dark:bg-black  bg-white border rounded-lg shadow-lg hover:bg-slate-300">
             <p>Components Content</p>
             <p>Additional Info</p>
           </div>
@@ -53,7 +53,7 @@ export default function Navigationmenu() {
       </div>
 
       <div 
-        className="relative text-[13px] flex items-center gap-3 cursor-pointer"
+        className="relative text-[13px] flex items-center gap-3 cursor-pointer dark:text-white"
       >
         Documentation
       </div>

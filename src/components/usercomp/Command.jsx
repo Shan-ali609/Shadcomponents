@@ -11,8 +11,8 @@ export default function Command({dropprop}) {
     <>
 
 
-                <div className={`  ${dropprop ? " w-[250px] h-80 border rounded-sm shadow-lg" : " w-[450px] h-80 border rounded-sm shadow-lg"}    ` }>
-               <div className={`  ${dropprop ? " pl-3 border" : " "}    ` }>  
+                <div className={`  ${dropprop ? " w-[250px] h-80 border rounded-sm shadow-lg  " : " w-[450px] h-80 border rounded-sm shadow-lg"}    ` }>
+               <div className={`  ${dropprop ? " pl-3 border dark:text-white" : " "}    ` }>  
                  {dropprop ? "My Account" : <Mysearch />} 
                </div>
                    <div className='border-b'>

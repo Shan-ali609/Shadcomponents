@@ -13,7 +13,7 @@ export default function Popupform({
       <div
         className={`${
           sheetcond
-            ? "fixed inset-y-0 top-0 mt-7 right-0 bg-gray-200 bg-opacity-90 z-50"
+            ? "fixed w-full inset-y-0 top-0 flex justify-end right-0  bg-gray-200 dark:bg-black dark:bg-opacity-50  bg-opacity-90 z-50"
             : accountform
             ? " border  "
             : "fixed inset-0 flex justify-center items-center bg-black bg-opacity-50"

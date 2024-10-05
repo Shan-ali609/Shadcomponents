@@ -36,7 +36,7 @@ export default function Navbar() {
           <RxHamburgerMenu />
         </button>
 
-        <div className={`logo-name ${isNavOpen ? "open" : ""}`}>
+        <div className={`logo-name dark:bg-black ${isNavOpen ? "open" : ""}`}>
           <div className="text-bar">
             <SiShadcnui className="icon-logo dark:text-white" />
             {isNavOpen && (

@@ -10,15 +10,15 @@ export default function Popover() {
   return (
     <div className='relative'>
       <button 
-        className="px-4 py-2 bg-blue-500 text-white rounded-md" 
+        className="px-4 py-2 bg-white text-black border dark:bg-black dark:text-white rounded-md" 
         onClick={togglePopup}
       >
         Show Popup
       </button>
 
       {showPopup && (
-        <div className="absolute  bg-gray-600 bg-opacity-50 flex justify-center items-center gap-4">
-          <div className="bg-white p-6 flex flex-col gap-3 shadow-lg w-[400px]">
+        <div className="absolute  bg-gray-600 bg-opacity-50 flex justify-center items-center gap-4 ">
+          <div className="bg-white p-6 flex flex-col gap-3 shadow-lg w-[400px] dark:text-white dark:bg-black  border">
             <h2 className="text-lg font-bold mb-4">Set Dimensions</h2>
             
             <div className="flex gap-4 items-center">
@@ -26,7 +26,7 @@ export default function Popover() {
                <div className='pl-[41px]'>
               <input
                 type="text"
-                className=" border rounded-xs pl-2"
+                className=" border rounded-xs pl-2 dark:bg-black"
                 placeholder="Enter width"
               />
             </div>
@@ -37,7 +37,7 @@ export default function Popover() {
               <div className='pl-[5px]'>
               <input
                 type="text"
-                className=" border rounded-xs pl-2"
+                className=" border rounded-xs pl-2 dark:bg-black"
                 placeholder="Max width"
               />
               </div>
@@ -48,7 +48,7 @@ export default function Popover() {
              <div className='pl-[35px]'>
               <input
                 type="text"
-                className=" border rounded-xs pl-2"
+                className=" border rounded-xs pl-2 dark:bg-black"
                 placeholder="Height"
               />
               </div>
@@ -59,7 +59,7 @@ export default function Popover() {
               <label className=" text-md">Max Height</label>
               <input
                 type="text"
-                className=" border rounded-xs pl-2"
+                className=" border rounded-xs pl-2 dark:bg-black"
                 placeholder="Height"
               />
             </div>

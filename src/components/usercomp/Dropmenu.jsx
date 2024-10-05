@@ -7,14 +7,14 @@ export default function Dropmenu() {
     setopenclick(!openclick);
  }
   return (
-    <div>
+    <div className=' relative '>
               
-              <div className=' relative border px-3 py-2 rounded-md hover:bg-slate-300'>
-                <button type='button' onClick={handleit} >Open</button>
+              <div className='  border rounded-md hover:bg-slate-300 dark:text-white dark:hover:bg-gray-400 '>
+                <button type='button' className=' px-3 py-2' onClick={handleit} >Open</button>
               </div>
 
           {openclick && (
-            <div className='absolute '>
+            <div className='absolute   '>
             <Command dropprop = {true} />
             </div>
           )}

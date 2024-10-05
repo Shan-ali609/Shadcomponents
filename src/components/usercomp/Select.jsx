@@ -24,7 +24,7 @@
      <>
                 <div className=' relative w-46 '>
                     
-                    <div className=' px-5 py-2 border flex items-center gap-20 cursor-pointer'
+                    <div className=' px-5 py-2 border flex items-center gap-20 cursor-pointer dark:text-white'
                      onClick={handleopen}
                     >
                       <div>{selectvalue}</div>
@@ -32,10 +32,10 @@
                     </div>
                     
                     {isopen && (
-                        <div className='absolute w-46  z-10 left-0 right-0 border border-gray-300 py-2'>
+                        <div className='absolute w-46  z-10 left-0 right-0 border border-gray-300 py-2 dark:text-white'>
                        {options.map((option,index)=>(
                            <div key={index}
-                           className="p-2 cursor-pointer hover:bg-gray-200"
+                           className="p-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-400"
                            onClick={()=>handleoption(option)}
                            >
                           {option}

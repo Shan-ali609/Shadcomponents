@@ -8,7 +8,7 @@ export default function Leftside() {
   const [selectedid , setselectedid ] = useState(null);
   
   return (
-    <div className="left-container">
+    <div className="left-container dark:bg-black">
       <ul className="left-ul scroll-container">
         {Datacomp.map((data) => (
           <li key={data.id} 
