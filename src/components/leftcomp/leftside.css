@@ -21,24 +21,6 @@
         
     }
     
-
-    /* .scroll-container::-webkit-scrollbar {
-        width: 8px; 
-    }
-    
-    .scroll-container::-webkit-scrollbar-track {
-        background: white; 
-    }
-    
-    .scroll-container::-webkit-scrollbar-thumb {
-        background: white; 
-        border-radius: 10px; 
-    }
-    
-    .scroll-container::-webkit-scrollbar-thumb:hover {
-        background: white; 
-    } */
-    
     
     .scroll-container {
         scrollbar-width: thin; 
@@ -53,12 +35,12 @@
     }
     .dark .scroll-container {
         scrollbar-width: thin;
-        scrollbar-color: #2e2e2e #121212; /* Dark mode colors */
+        scrollbar-color: #2e2e2e #121212; 
     }
     
     .dark .scroll-container:hover {
         scrollbar-width: thin;
-        scrollbar-color: #505050 #2e2e2e; /* Dark mode hover colors */
+        scrollbar-color: #505050 #2e2e2e; 
     }
     
     .left-ul {
@@ -97,9 +79,9 @@
     
     .left-a {
         text-decoration: none; 
-        padding-right: 150px;
+        /* padding-right: 150px;
         padding-top: 6px;
-        padding-bottom: 6px;
+        padding-bottom: 6px; */
     }
   
     
