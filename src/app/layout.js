@@ -47,11 +47,11 @@ export default function RootLayout({ children }) {
           ${isleftvisible ? "grid-cols-[300px_1fr]" : "grid-cols-[6fr]"} 
           ${
             isrightvisible
-              ? " grid-cols-[300px_1fr_330px]"
+              ? " grid-cols-[360px_1fr_380px]"
               : " grid-cols-[300px_1fr]"
           } `}
           >
-            <div className="  overflow-auto h-screen sticky dark:bg-black hidden md:block  top-0 mt-[41px]">
+            <div className="  overflow-auto h-screen sticky dark:bg-black hidden md:block pl-16   top-0 mt-[41px]">
               <Leftside />
             </div>
 

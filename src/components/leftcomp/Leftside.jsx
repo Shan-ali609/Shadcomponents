@@ -6,13 +6,13 @@ import Link from "next/link";
 import Datacomp from "../pagecomp/Datacomp";
 import { usePathname } from "next/navigation"; 
 
-export default function Leftside() {
+export default function Leftside({marginprop}) {
   const pathname = usePathname(); 
   const currentSlug = pathname.split("/").pop(); 
 
   return (
-    <div className="left-container dark:bg-black">
-      <ul className="left-ul scroll-container">
+    <div className={ `left-container   dark:bg-black `}>
+      <ul className={` left-ul scroll-container `}>
         {Datacomp.map((data) => (
           <li
             key={data.id}
