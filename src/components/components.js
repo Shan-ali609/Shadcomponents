@@ -36,9 +36,7 @@ import Select from "./usercomp/Select";
 import Separator from "./usercomp/Separator";
 import Sheet from "./usercomp/Sheet";
 import Slider from "./usercomp/Slider";
-
 import Tabs from "./usercomp/Tabs";
-
 import Switch from "./usercomp/Switch";
 import Textarea from "./usercomp/Textarea";
 import Tooltip from "./usercomp/Tooltip";

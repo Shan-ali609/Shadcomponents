@@ -5,8 +5,9 @@ import MyDropdown from '@/components/pagecomp/Mydropdown';
 import { AiOutlineInbox } from "react-icons/ai";
 import React from 'react';
 
-export default function Page({ params }) {
+export default function Page({params}) {
     const slug = params.slug;
+  
 
     const component = components.find(item => item.slug === slug);
 

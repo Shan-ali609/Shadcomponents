@@ -1,34 +1,27 @@
 
 "use client";
-import React, { useState, useEffect } from "react";
-import '@/components/leftcomp/leftside.css';
+import React from "react";
+import "@/components/leftcomp/leftside.css";
 import Link from "next/link";
 import Datacomp from "../pagecomp/Datacomp";
+import { usePathname } from "next/navigation"; 
 
 export default function Leftside() {
-  const [selectedid, setselectedid] = useState(null);
-  useEffect(() => {
-    const storedId = localStorage.getItem("selectedid");
-    if (storedId) {
-      setselectedid(storedId);
-    }
-  }, []);
-
-  const handleSelect = (id) => {
-    setselectedid(id);
-    localStorage.setItem("selectedid", id); 
-  };
+  const pathname = usePathname(); 
+  const currentSlug = pathname.split("/").pop(); 
 
   return (
-    <div className="left-container dark:bg-black ">
+    <div className="left-container dark:bg-black">
       <ul className="left-ul scroll-container">
         {Datacomp.map((data) => (
           <li
             key={data.id}
-            onClick={() => handleSelect(data.id)}
-            className={`left-li  ${selectedid === data.id ? "shan" : ""}`}
+            className=" left-li"
           >
-            <Link className="raleway   left-a dark:text-white" href={`/component/${data.id}`}>
+            <Link
+              className={`raleway left-a dark:text-white ${data.id === currentSlug ? "font-bold text-black dark:text-white dark:font-bold " : ""} ` }
+              href={`/component/${data.id}`}
+            >
               {data.name}
             </Link>
           </li>
@@ -37,7 +30,6 @@ export default function Leftside() {
     </div>
   );
 }
-
 
 
 
