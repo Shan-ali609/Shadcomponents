@@ -198,11 +198,11 @@ export default function Navbar() {
       
       {isSearchPopupOpen && (
         <div className="search-popup fixed inset-0 flex justify-center items-center  bg-black bg-opacity-50 z-50">
-          <div className="bg-white dark:bg-gray-800 px-5 py-5 rounded-lg w-[600px] h-96 overflow-auto">
+          <div className="bg-white dark:bg-black dark:text-white px-5 py-5 rounded-lg w-[600px] h-96 overflow-auto">
             <div className="flex justify-between items-center mb-4">
               <div className="relative">
               
-              <input type="text" placeholder="search here" className="w-[450px] h-9 rounded border-2 pl-2 " />
+              <input type="text" placeholder="search here" className="w-[450px] h-9 rounded border-2 pl-2 dark:bg-black dark:text-white " />
             
                 <CiSearch className= "absolute top-2/4 right-4 transform -translate-y-2/4 text-gray-500 dark:text-white cursor-pointer" />
               
