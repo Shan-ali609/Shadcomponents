@@ -20,6 +20,7 @@ body {
 .raleway{
   font-family: var(--font-raleway);
 }
+
 .close-btn.open {
   left: 0;
 }

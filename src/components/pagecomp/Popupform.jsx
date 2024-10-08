@@ -16,7 +16,7 @@ export default function Popupform({
             ? "fixed w-full inset-y-0 top-0 flex justify-end right-0  bg-gray-200 dark:bg-black dark:bg-opacity-50  bg-opacity-90 z-50"
             : accountform
             ? " border rounded-sm mt-2  "
-            : "fixed inset-0 flex justify-center items-center bg-black bg-opacity-50"
+            : "fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50"
         }`}
       >
         <div
@@ -25,7 +25,7 @@ export default function Popupform({
               ? accountform
                 ? "bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  "
                 : "bg-white p-6 rounded-md shadow-md max-w-[450px] dark:bg-black dark:border "
-              : "bg-white p-6 rounded-md shadow-md max-w-[600px] dark:bg-black dark:border "
+              : "bg-white p-6 rounded-md shadow-md max-w-[510px] dark:bg-black dark:border "
           }`}
         >
           <h2 className="text-lg font-semibold dark:text-white">
@@ -39,7 +39,7 @@ export default function Popupform({
           </h2>
           <p
             className={`${
-              dialprop ? "text-[15px] text-gray-500 dark:text-gray-200 " : "dark:text-gray-200"
+              dialprop ? "text-[15px] text-gray-500 dark:text-gray-200 " : "dark:text-gray-200 text-[14px] py-2 text-black/80"
             }`}
           >
             {dialprop
@@ -98,7 +98,7 @@ export default function Popupform({
             {accountbtn && (
               <button
                 onClick={onClose}
-                className="border px-3 py-1 rounded-md bg-gray-300 hover:bg-gray-400"
+                className="border px-3 py-1 rounded-md bg-white hover:bg-gray-200"
               >
                 Close
               </button>

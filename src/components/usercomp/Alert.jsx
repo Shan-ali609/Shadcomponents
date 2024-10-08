@@ -1,35 +1,20 @@
-
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import '@/components/pagecomp/main.css';
 import { RxRocket } from "react-icons/rx";
-import { Dropdown } from 'react-day-picker';
 
-export default function Accordion({}) {
-  
- 
-
-  
-
+export default function Accordion() {
   return (
-    
-    <>
-     
-         
-         
-              
-               <div className='w-full border-2 px-6 mx-auto  py-1 max-w-2xl  rounded-md '>
-                <div className='flex'>
-                <RxRocket className='mt-2 dark:text-white' />
-                <h4 className='pl-3 dark:text-white'>Heads up!</h4>
-                </div>
-                  <p className='pl-6 text-slate-400 dark:text-white text-sm'>You can add components to your app using the cli.</p>
-               </div>
-
-         
-
-   
-
-    </>
+    <div className='w-full py-40'>
+      <div className='w-auto border pl-2  py-2 mx-9   rounded-md'>
+        <div className='flex items-center'>
+          <RxRocket className='text-md sm:text-md dark:text-white' />
+          <h4 className='pl-[2px] sm:pl-3 text-md dark:text-white'>Heads up!</h4>
+        </div>
+        <p className='pl-5 sm:pl-6 text-[14px] text-black/70 dark:text-white text-md'>
+          You can add components to your app using the CLI.
+        </p>
+      </div>
+    </div>
   );
 }

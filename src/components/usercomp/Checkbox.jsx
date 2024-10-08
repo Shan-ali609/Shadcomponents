@@ -4,7 +4,7 @@
     return (
       <div>
           
-          <div className='flex gap-2'>
+          <div className='flex gap-2 py-40 '>
            <div className=''>
             <input className='  cursor-pointer dark:border-2 ' type='checkbox' />
             </div>

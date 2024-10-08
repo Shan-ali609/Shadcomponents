@@ -10,18 +10,18 @@ export default function Rightside() {
   return (
     <div className='ml-3 mt-5 '>
       <ul >
-        <li className='mt-1 mb-1 text-black dark:text-white'  > 
+        <li className='mt-1 mb-1 text-black text-[14px] font-thin Roboto dark:text-white'  > 
           <Link href=''>On This Page</Link> </li>
 
         <li 
-        className={`mt-1 mb-1 dark:text-white ${selecteditem === 'installation' ? 'text-black' : 'text-slate-300'} `}
+        className={`mt-1 mb-1 font-medium text-[14px] dark:text-white raleway ${selecteditem === 'installation' ? 'text-black' : 'text-slate-300'} `}
         onClick={()=>handleitem('installation')}
-        > <Link href=''>installation</Link> </li>
+        > <Link href=''>Installation</Link> </li>
 
 <li 
-        className={`mt-1 mb-1  ${selecteditem === 'usage' ? 'text-black' : 'text-slate-300'} `}
+        className={`mt-1 mb-1  raleway text-[14px] font-medium ${selecteditem === 'usage' ? 'text-black' : 'text-slate-300'} `}
         onClick={()=>handleitem('usage')}
-        > <Link href=''>usage</Link> </li>
+        > <Link href=''>Usage</Link> </li>
       
       </ul>
     </div>

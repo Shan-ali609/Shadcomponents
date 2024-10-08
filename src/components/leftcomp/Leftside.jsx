@@ -19,7 +19,7 @@ export default function Leftside({marginprop}) {
             className=" left-li"
           >
             <Link
-              className={`raleway left-a dark:text-white ${data.id === currentSlug ? "font-bold text-black dark:text-white dark:font-bold " : ""} ` }
+              className={`Roboto left-a dark:text-white ${data.id === currentSlug ? "font-bold text-black dark:text-white dark:font-bold " : ""} ` }
               href={`/component/${data.id}`}
             >
               {data.name}

@@ -1,13 +1,11 @@
 "use client";
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { SlArrowDown } from "react-icons/sl";
 import '@/components/pagecomp/main.css';
 
-
 export default function Accordion() {
-  
   const [activeIndex, setActiveIndex] = useState(null);
-     
+
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
@@ -19,30 +17,24 @@ export default function Accordion() {
   ];
 
   return (
-    <>
-      {/* <div className='w-full flex content-center items-center  mt-9 border-2 rounded-lg h-[450px]'> */}
-      <div className=' border-green-900 flex flex-col items-center mx-auto justify-center w-2/4 h-full'> 
-  {accordionItems.map((item, index) => (
-    <div key={index} className='  w-full border-b last:border-b-0'> 
-      <div
-        className='flex justify-between items-center p-4 cursor-pointer dark:hover:bg-black hover:bg-gray-100 transition-colors duration-200' 
-        onClick={() => toggleAccordion(index)}
-      >
-        <h4 className='text-sm dark:text-white '>{item.title} </h4> 
-        <SlArrowDown className={`transform transition-transform duration-200 dark:text-white ${activeIndex === index ? 'rotate-180' : ''}`} /> 
-      </div>
-      {activeIndex === index && (
-        <div className={`px-4 bg-gray-50 dark:bg-black dark:text-white ${activeIndex === index ? 'open' : ''}`}> 
-          <p>{item.content}</p>
+    <div className='flex flex-col items-center mx-auto justify-center w-full sm:w-3/4 lg:w-3/4 h-full space-y-4 px-4 py-24'>
+      {accordionItems.map((item, index) => (
+        <div key={index} className='w-full border-b last:border-b-0'> 
+          <div
+            className='flex justify-between items-center p-4 cursor-pointer dark:hover:bg-black hover:bg-gray-100 transition-colors duration-200' 
+            onClick={() => toggleAccordion(index)}
+          >
+            <h4 className=' text-[14px] dark:text-white'>{item.title}</h4> 
+            <SlArrowDown className={`transform transition-transform duration-200 dark:text-white ${activeIndex === index ? 'rotate-180' : ''}`} /> 
+          </div>
+          {activeIndex === index && (
+            <div className={`px-4 py-2 bg-gray-50 dark:bg-black dark:text-white ${activeIndex === index ? 'open' : ''}`}>
+              <p className='text-[14px]'>{item.content}</p>
+            </div>
+          )}
         </div>
-      )}
+      ))}
     </div>
-  ))}
-</div>
-
-      {/* </div> */}
-    </>
   );
 }
-
 

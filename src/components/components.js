@@ -52,7 +52,7 @@ import Toast from "./usercomp/Toast";
 
 const components = [
     {
-        Name : 'Accordian',
+        Name : 'Accordion',
         slug : 'accordion',
         text : 'A vertically stacked set of interactive headings that each reveal a section of content.',
         Component: Accordion,

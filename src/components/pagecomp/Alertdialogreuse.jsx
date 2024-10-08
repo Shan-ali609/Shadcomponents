@@ -11,9 +11,9 @@ export default function Alertdialog({nameprop , sheetcond , dialprop,accountbtn 
 
     return (
         <>
-            <div className="w-full flex justify-center items-center">
+            <div className="w-full  flex justify-center items-center py-44">
                 <div>
-                    <Link href="#" onClick={isopen} className="mx-auto border px-3 py-1 rounded-md dark:text-white dark:hover:bg-neutral-600 hover:bg-gray-100">
+                    <Link href="#" onClick={isopen} className="mx-auto border raleway  px-3 py-3 rounded-md dark:text-white dark:hover:bg-neutral-600 hover:bg-gray-100">
                         {nameprop} 
                     </Link>
                 </div>
