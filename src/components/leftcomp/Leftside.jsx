@@ -12,14 +12,14 @@ export default function Leftside({marginprop}) {
 
   return (
     <div className={ `left-container   dark:bg-black `}>
-      <ul className={` left-ul scroll-container `}>
+      <ul className={` left-ul scroll-container pt-4  `}>
         {Datacomp.map((data) => (
           <li
             key={data.id}
-            className=" left-li"
+            className=" left-li dark:text-white/70"
           >
             <Link
-              className={`Roboto left-a dark:text-white ${data.id === currentSlug ? "font-bold text-black dark:text-white dark:font-bold " : ""} ` }
+              className={`Roboto left-a  ${data.id === currentSlug ? "font-bold text-black dark:text-white " : ""} ` }
               href={`/component/${data.id}`}
             >
               {data.name}

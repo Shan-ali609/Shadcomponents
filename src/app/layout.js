@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
               <Leftside />
             </div>
 
-            <div className="    bg-white dark:bg-black px-5  ">{children}</div>
+            <div className="    bg-white dark:bg-black px-5 pt-4 pb-2  ">{children}</div>
             <div className="  sticky top-0  mt-[41px] h-screen dark:bg-black hidden xl:block  ">
               {" "}
               <Rightside />

@@ -19,13 +19,13 @@ export default function Accordion() {
   return (
     <div className='flex flex-col items-center mx-auto justify-center w-full sm:w-3/4 lg:w-3/4 h-full space-y-4 px-4 py-24'>
       {accordionItems.map((item, index) => (
-        <div key={index} className='w-full border-b last:border-b-0'> 
+        <div key={index} className='w-full border-b dark:border-white/20 last:border-b-0'> 
           <div
             className='flex justify-between items-center p-4 cursor-pointer dark:hover:bg-black hover:bg-gray-100 transition-colors duration-200' 
             onClick={() => toggleAccordion(index)}
           >
             <h4 className=' text-[14px] dark:text-white'>{item.title}</h4> 
-            <SlArrowDown className={`transform transition-transform duration-200 dark:text-white ${activeIndex === index ? 'rotate-180' : ''}`} /> 
+            <SlArrowDown className={`transform transition-transform duration-200 text-[13px] dark:text-white ${activeIndex === index ? 'rotate-180' : ''}`} /> 
           </div>
           {activeIndex === index && (
             <div className={`px-4 py-2 bg-gray-50 dark:bg-black dark:text-white ${activeIndex === index ? 'open' : ''}`}>

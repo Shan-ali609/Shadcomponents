@@ -20,8 +20,8 @@ export default function Page({ params }) {
   return (
     <div >
       <Maintitle title={component.Name} para={component.text} />
-      <div className=" w-full   mt-9 border border-gray-300 rounded-lg h-auto">
-         <div className="w-full  flex justify-between px-1 pt-7 pb-5 border">
+      <div className=" w-full   mt-9 border border-gray-300 dark:border-white/20 rounded-lg h-auto">
+         <div className="w-full  flex justify-between px-1  pt-7 pb-5 ">
          <MyDropdown data = {["New york", "Default"]} />
        
         </div> 

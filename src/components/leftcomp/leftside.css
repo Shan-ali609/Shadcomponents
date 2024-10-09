@@ -55,8 +55,16 @@
     .left-ul li:first-child {
         color: black;
         pointer-events: none;
+    
         
     }
+    .dark .left-ul li:first-child {
+        color: white;
+         opacity: 90%;
+        /* Dark mode color */
+    }
+ 
+      
     .left-ul li:first-child {
     
         font-size: 15px;

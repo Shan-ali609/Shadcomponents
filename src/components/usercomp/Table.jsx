@@ -11,7 +11,7 @@ export default function Table() {
     ];
 
     return (
-        <div className='lg:w-full md:w-full w-[300px] overflow-auto  '>
+        <div className='lg:w-full md:w-full sm:w-full w-[400px] overflow-auto  '>
             
             <div className='flex gap-12  border-b pb-3  mx-16  text-gray-400 dark:text-white'>
                 <h1 className='w-1/4'>Invoice</h1>

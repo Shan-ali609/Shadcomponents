@@ -22,7 +22,7 @@ export default function MyDropdown({ data, cond }) {
       <div
         className={` ${
           cond
-            ? "w-52 cursor-pointer h-6 flex justify-between border py-4 px-2 items-center rounded-md dark:text-white "  : "cursor-pointer  flex rounded-md border w-36 pl-2 dark:text-white "} `}
+            ? "w-52 cursor-pointer h-6 flex justify-between border dark:border-white/20 py-4 px-2 items-center rounded-md dark:text-white "  : "cursor-pointer  flex rounded-md border dark:border-white/20 w-36 pl-2 dark:text-white "} `}
         onClick={toggleDropdown}
       >
         <h4
@@ -36,10 +36,10 @@ export default function MyDropdown({ data, cond }) {
             className={` ${
               cond
                 ? " text-gray-700 text-[12px] dark:text-white"
-                : "text-gray-400 text-xs pr-4 dark:text-white"
+                : "text-gray-400 text-xs pr-4 dark:text-white/70"
             }`}
           >
-            {cond ? "" : "Style:"}
+            {cond ? "" : "Style: "}
           </span>
           {selectedOption}
         </h4>
@@ -53,14 +53,14 @@ export default function MyDropdown({ data, cond }) {
       </div>
       <div className=" flex items-center gap-3 ">
         {selectedOption === "Default" && (
-          <div className="bg-black rounded-sm ">
-            <button className=" text-xs px-2  text-white py-1 flex ">
+          <div className="bg-black rounded-sm dark:bg-white ">
+            <button className=" text-xs px-2  text-white dark:text-black py-1 flex ">
               open in <FaArrowUpRightDots className="pl-1" />{" "}
             </button>
           </div>
         )}
 
-        <div className="border py-[4px] px-1 rounded-md">
+        <div className="border dark:border-white/20 py-[4px] px-1 rounded-md">
           {cond ? "" :  <AiOutlineInbox className="text-md cursor-pointer dark:text-white  text-black " />}
          {" "}
         </div>
@@ -70,8 +70,8 @@ export default function MyDropdown({ data, cond }) {
         <div
           className={` ${
             cond
-              ? "absolute z-10 top-full  bg-white border rounded-md w-44 dark:bg-black dark:text-white"
-              : "dark:bg-black dark:text-white absolute z-10 top-full  bg-white border rounded-md w-36"
+              ? "absolute z-10 top-full  bg-white border dark:border-white/20 rounded-md w-44 dark:bg-black dark:text-white"
+              : "dark:bg-black dark:text-white absolute z-10 top-full  bg-white border dark:border-white/20 rounded-md w-36"
           } `}
         >
           {cond && (

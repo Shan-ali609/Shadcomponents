@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full md:px-0 lg:px-10 xl:px-14 h-[56px] text-[rgb(4,4,4)] flex justify-between items-center p-2 fixed z-50 bg-white dark:bg-black">
+      <nav className="w-full border-b dark:border-white/20  md:px-0 lg:px-10 xl:px-14 h-[56px] text-[rgb(4,4,4)] flex justify-between items-center p-2 fixed z-50 bg-white dark:bg-black">
         <button
           className="imburger dark:text-white"
           aria-label="Toggle navigation"
@@ -63,8 +63,8 @@ export default function Navbar() {
           </div>
 
           <ul className={`ul-flex ${isNavOpen ? "open" : ""}`}>
-            <li className="dark:text-white">Docs</li>
-            <li className="dark:text-white">Components</li>
+            <li className="dark:text-white/70">Docs</li>
+            <li className="dark:text-white/90">Components</li>
           </ul>
           {isNavOpen && (
             <div>

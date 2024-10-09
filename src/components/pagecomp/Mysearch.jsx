@@ -5,7 +5,7 @@ export default function Mysearch({navsearch, datatable}) {
     <>
       <div className="relative ">
         <input
-          className={` ${navsearch ? "  pr-10 cursor-pointer   pl-3 w-40 md:w-52  lg:w-60 outline-none border   dark:text-white dark:placeholder-white rounded-lg dark:bg-black  " : " dark:text-white w-full pt-1.5 pr-10 pb-1.5 pl-7  border dark:bg-slate-900 dark:placeholder-white  " } ${datatable ? "w-[400px]  rounded-sm " : " outline-none"}  `}
+          className={` ${navsearch ? "  pr-10 cursor-pointer py-1  pl-3 w-40 md:w-52  lg:w-60 outline-none border  dark:border-black  dark:text-white/70 dark:placeholder-white/70 rounded-lg dark:bg-white/10  dark:hover:bg-white/20 " : " dark:placeholder:text-white/70 w-full pt-1.5 pr-10 pb-1.5 pl-7  border dark:border-white/20 dark:bg-white/10 dark:placeholder-white  " } ${datatable ? "w-[400px]  rounded-sm " : " outline-none"}  `}
           type="text"
           placeholder= {` ${datatable ? "Filter emails " : "Search here " }`}
         />
