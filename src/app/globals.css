@@ -17,8 +17,16 @@ body {
     --radius: 0.5rem;
   }
 }
-.raleway{
-  font-family: var(--font-raleway);
+.raleway-regular {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .close-btn.open {

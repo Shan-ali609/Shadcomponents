@@ -11,9 +11,9 @@ export default function Table() {
     ];
 
     return (
-        <div className='w-full'>
+        <div className='lg:w-full md:w-full w-[300px] overflow-auto  '>
             
-            <div className='flex justify-between border-b pb-3  mx-16  text-gray-400 dark:text-white'>
+            <div className='flex gap-12  border-b pb-3  mx-16  text-gray-400 dark:text-white'>
                 <h1 className='w-1/4'>Invoice</h1>
                 <h1 className='w-1/4'>Status</h1>
                 <h1 className='w-1/4'>Method</h1>
@@ -21,13 +21,16 @@ export default function Table() {
             </div>
         
             {bankdetail.map((item, index) => (
-                <div key={index} className='flex justify-between mx-16 pt-4 border-b pb-3 text-gray-700 dark:text-white'>
+                <div key={index} className='flex gap-12 mx-16 pt-4 border-b pb-3 text-gray-700 dark:text-white'>
                     <h1 className='w-1/4'>{item.Inovice}</h1>
                     <h1 className='w-1/4'>{item.Status}</h1>
                     <h1 className='w-1/4'>{item.Method}</h1>
                     <h1 className='w-1/4 text-right'>{item.Salary}$</h1> 
                 </div>
             ))}
+            <div className='w-full text-center py-4 font-roboto text-black/60'>
+                <p className='text-center'>A list of your recent invoices.</p>
+            </div>
         </div>
     );
 }

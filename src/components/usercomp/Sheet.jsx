@@ -8,3 +8,6 @@ export default function Sheet() {
     </>
   )
 }
+{/* <div className='fixed  inset-y-0 top-0 right-0  bg-white bg-opacity-90 z-50'></div>
+<Alertdialogreuse nameprop="open" sheetcond = {true} dialprop = {true}  />
+</> */}

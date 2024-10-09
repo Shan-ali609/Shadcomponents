@@ -5,14 +5,14 @@ export default function Pagination() {
   return (
     <>
 
-       <div className='flex gap-3 items-center cursor-pointer'>
+       <div className='flex gap-3 items-center cursor-pointer py-44'>
         <div className=' flex items-center gap-2 px-5 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-400 dark:text-white'>
-        <SlArrowLeft />
-            <button type='button' >Previous </button>
+        <SlArrowLeft className='text-[9px]' />
+            <button type='button ' className='font-roboto' >Previous </button>
         </div>
 
         <div className='dark:text-white'>1</div>
-        <div className='px-2 py-2 hover:bg-gray-200 dark:text-white dark:hover:bg-gray-400'>2</div>
+        <div className='px-3 py-2 rounded-md hover:bg-gray-300/30 border dark:text-white '>2</div>
         <div className='dark:text-white'>3</div>
         <div className='dark:text-white'>...</div>
           
@@ -20,8 +20,8 @@ export default function Pagination() {
 
 
         <div className=' flex  items-center gap-2 px-9 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-400 dark:text-white'>
-        <button type='button' > Next </button>
-        <SlArrowRight />
+        <button type='button' className='font-roboto' > Next </button>
+        <SlArrowRight className='text-[9px]' />
             
         </div>
        </div>

@@ -11,6 +11,10 @@ export default function Drawer() {
     setIsOpen(!isOpen);
   };
 
+   const handleclose = () => {
+    setIsOpen(false);
+   }
+
   const incrementCounter = () => {
     if (counter < 400) {
       setCounter(counter + 10);
@@ -24,9 +28,9 @@ export default function Drawer() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative py-40">
       <button
-        className="px-4 py-2  text-black border rounded-lg dark:text-white"
+        className="px-4 py-2 font-roboto text-[14px]  text-black border rounded-lg dark:text-white"
         onClick={toggleDrawer}
       >
         Open Drawer
@@ -85,13 +89,15 @@ export default function Drawer() {
           <div className="flex flex-col w-full pt-4 gap-3 ">
             <button
               type="button"
-              className="w-full border-2 bg-black dark:text-white dark:bg-black  py-1 rounded-sm"
+              className="w-full border-2 bg-black text-white dark:bg-black  py-1 rounded-sm"
+              onClick={handleclose}
             >
               Submit
             </button>
             <button
               type="button"
               className="w-full border-2  text-black dark:text:white py-1 rounded-sm"
+              onClick={handleclose}
             >
               Cancel
             </button>

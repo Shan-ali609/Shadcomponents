@@ -7,7 +7,7 @@ const MyComponent = () => {
    const {theme} =    useContext(AppStateContext)
   const notify = () => {
     toast("This is a custom toast!", {
-      position: "bottom-right",  // Changed to bottom-right
+      position: "bottom-right",  
       autoClose: 2000,  
       hideProgressBar: true,
       closeOnClick: true,
@@ -20,8 +20,8 @@ const MyComponent = () => {
   };
 
   return (
-    <div>
-      <button onClick={notify} className="border-2 px-6 py-1 rounded-sm hover:bg-slate-100 text-black dark:text-white dark:hover:bg-gray-400">
+    <div className="py-44">
+      <button onClick={notify} className="border-2 px-6 py-1 text-[14px] font-roboto text-black/80 rounded-sm hover:bg-gray-300/20 dark:text-white dark:hover:bg-gray-400">
         Show Toast
       </button>
       <ToastContainer theme={theme === "light" ? "light" : "dark"}   />

@@ -4,13 +4,19 @@ import Leftside from "../components/leftcomp/Leftside";
 import Rightside from "../components/rightcomp/Rightside";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer/Footer";
-import { Raleway } from "next/font/google";
+import { Raleway, Roboto } from 'next/font/google';
+
 import React, { useState, useEffect } from "react";
 import AppState from "@/components/contextApi/AppState";
 const raleway = Raleway({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-raleway",
+});
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["500"],
+  variable: "--font-roboto",
 });
 
 
@@ -38,7 +44,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className="raleway.variable  "
+      // className="raleway.variable  "
+       className={`${raleway.variable} ${roboto.variable}`}
       >
         <AppState>
           <Navbar />
@@ -55,7 +62,7 @@ export default function RootLayout({ children }) {
               <Leftside />
             </div>
 
-            <div className="    bg-white dark:bg-black   ">{children}</div>
+            <div className="    bg-white dark:bg-black px-5  ">{children}</div>
             <div className="  sticky top-0  mt-[41px] h-screen dark:bg-black hidden xl:block  ">
               {" "}
               <Rightside />

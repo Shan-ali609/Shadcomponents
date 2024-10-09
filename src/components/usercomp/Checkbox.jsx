@@ -9,7 +9,7 @@
             <input className='  cursor-pointer dark:border-2 ' type='checkbox' />
             </div>
            <div>
-           <h1 className='font-bold dark:text-white'>Accept term and conditions</h1>
+           <h1 className='font-roboto dark:text-white'>Accept term and conditions</h1>
            </div>
           </div>
       </div>

@@ -13,10 +13,10 @@ export default function Popupform({
       <div
         className={`${
           sheetcond
-            ? "fixed w-full inset-y-0 top-0 flex justify-end right-0  bg-gray-200 dark:bg-black dark:bg-opacity-50  bg-opacity-90 z-50"
+            ? "fixed w-full inset-y-0 top-0 flex justify-end right-0  bg-black dark:bg-black dark:bg-opacity-50  bg-opacity-50 z-50"
             : accountform
             ? " border rounded-sm mt-2  "
-            : "fixed inset-0 flex justify-center items-center bg-black bg-opacity-60 z-50"
+            : "fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50"
         }`}
       >
         <div
@@ -28,7 +28,7 @@ export default function Popupform({
               : "bg-white p-6 rounded-md shadow-md max-w-[510px] dark:bg-black dark:border "
           }`}
         >
-          <h2 className="text-lg font-semibold dark:text-white">
+          <h2 className="text-lg font-roboto dark:text-white">
             {dialprop
               ? accountform
                 ? pwdform
@@ -55,7 +55,7 @@ export default function Popupform({
                   accountform ? " py-3 " : "flex gap-2 py-3 ml-20 "
                 }     `}
               >
-                <p className={` ${accountform ? " text-md" : "text-lg dark:text-white "} `}>
+                <p className={` ${accountform ? " text-md" : "text-[14px] dark:text-white "} `}>
                   {" "}
                   {pwdform ? "Password" : "Name"}{" "}
                 </p>
@@ -74,7 +74,7 @@ export default function Popupform({
                   accountform ? " " : "flex gap-2 py-3 ml-[44px]"
                 }     `}
               >
-                <p className={` ${accountform ? " text-md" : "text-lg dark:text-white "} `}>
+                <p className={` ${accountform ? " text-md" : "text-[14px] dark:text-white "} `}>
                   {" "}
                   {pwdform ? "New Password" : "Username"}{" "}
                 </p>
