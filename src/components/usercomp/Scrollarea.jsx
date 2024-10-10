@@ -1,5 +1,5 @@
 import React from 'react'
-import "@/components/leftcomp/leftside.css"
+import '../leftcomp/leftside.css'
 import Datacomp from '@/components/pagecomp/Datacomp'
 export default function Scrollarea() {
   return (
