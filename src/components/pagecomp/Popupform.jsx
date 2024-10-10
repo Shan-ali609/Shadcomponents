@@ -15,7 +15,7 @@ export default function Popupform({
           sheetcond
             ? "fixed w-full inset-y-0 top-0 flex justify-end right-0  bg-black dark:bg-black dark:bg-opacity-50  bg-opacity-50 z-50"
             : accountform
-            ? " border rounded-sm mt-2  "
+            ? " border dark:border-white/20 rounded-sm mt-2  "
             : "fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50"
         }`}
       >
@@ -24,8 +24,8 @@ export default function Popupform({
             dialprop
               ? accountform
                 ? "bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  "
-                : "bg-white p-6 rounded-md shadow-md max-w-[450px] dark:bg-black dark:border "
-              : "bg-white p-6 rounded-md shadow-md max-w-[510px] dark:bg-black dark:border "
+                : "bg-white p-6 rounded-md shadow-md max-w-[450px] dark:bg-black dark:border-white/20 "
+              : "bg-white p-6 rounded-md shadow-md max-w-[510px] dark:bg-black dark:border-white/20"
           }`}
         >
           <h2 className="text-lg font-roboto dark:text-white">
@@ -37,17 +37,40 @@ export default function Popupform({
                 : "Edit Profile "
               : "Are you absolutely sure?"}
           </h2>
-          <p
+          {/* <p
             className={`${
               dialprop ? "text-[15px] text-gray-500 dark:text-gray-200 " : "dark:text-gray-200 text-[14px] py-2 text-black/80"
             }`}
           >
-            {dialprop
-              ? pwdform
-                ? "Change your password here. After saving, you'll be logged out."
-                : "Make changes to your profile here. Click save when you're done."
-              : "This action cannot be undone. This will permanently delete your account and remove your data from our servers."}
+            {dialprop ? pwdform ? "Change your password here. After saving, you'll be logged out." 
+            : "Make changes to your profile here. Click save when you're done." 
+             : "This action cannot be undone. This will permanently delete your account and remove your data from our servers."}
           </p>
+           */}
+           <p
+  className={`${
+    dialprop
+      ? "text-[15px] text-gray-500 dark:text-gray-200"
+      : "dark:text-gray-200 text-[14px] py-2 text-black/80"
+  }`}
+>
+  {dialprop ? (
+    pwdform ? (
+   
+      <>
+      <span className=" dark:text-white/50">   Change your password here. After saving, you'll be logged out.</span>
+    </>
+    ) : (
+      <>
+        <span className=" dark:text-white/50">Make changes to your profile here.{" "}
+        Click save when you're done.</span>
+      </>
+    )
+  ) : (
+    "This action cannot be undone. This will permanently delete your account and remove your data from our servers."
+  )}
+</p>
+
           {dialprop && (
             <div>
               <div
@@ -62,8 +85,8 @@ export default function Popupform({
                 <input
                   className={`${
                     accountform
-                      ? " border-2 rounded-sm pl-2 w-full dark:bg-black"
-                      : "border-2 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white "
+                      ? " border dark:border-white/20 rounded-sm pl-2 w-full dark:bg-black"
+                      : "border dark:border-white/20 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white "
                   }`}
                   type="text"
                   placeholder={pwdform ? "" : "Name..."}
@@ -81,8 +104,8 @@ export default function Popupform({
                 <input
                   className={`${
                     accountform
-                      ? " border-2 rounded-sm pl-2 w-full dark:bg-black"
-                      : "border-2 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white "
+                      ? " border dark:border-white/20 rounded-sm pl-2 w-full dark:bg-black"
+                      : "border dark:border-white/20 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white "
                   }`}
                   type="text"
                   placeholder={pwdform ? "" : "Name..."}
@@ -108,8 +131,8 @@ export default function Popupform({
               onClick={onClose}
               className={` ${
                 accountform
-                  ? " border px-3 py-1 text-white rounded-md bg-black"
-                  : "ml-3 border px-3 py-1 text-white rounded-md bg-black dark:text-black dark:bg-white"
+                  ? " border dark:border-white/20 px-3 py-1 text-white rounded-md bg-black"
+                  : "ml-3 border dark:border-white/20 px-3 py-1 text-white rounded-md bg-black dark:text-black dark:bg-white"
               }`}
             >
               {dialprop ? "Save Changes" : "Continue"}

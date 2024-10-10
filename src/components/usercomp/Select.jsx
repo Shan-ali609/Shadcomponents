@@ -24,7 +24,7 @@
      <>
                 <div className=' relative w-46 py-44 '>
                     
-                    <div className=' px-5 py-2 border rounded-md flex items-center gap-20 cursor-pointer dark:text-white'
+                    <div className=' px-5 py-2 border dark:border-white/20 rounded-md flex items-center gap-20 cursor-pointer dark:text-white'
                      onClick={handleopen}
                     >
                       <div className='text-[14px] font-roboto'>{selectvalue}</div>
@@ -32,7 +32,7 @@
                     </div>
                     
                     {isopen && (
-                        <div className='absolute w-46  z-10 left-0 right-0 border border-gray-300 py-2 dark:text-white'>
+                        <div className='absolute w-46  z-10 left-0 right-0 border dark:border-white/20 border-gray-300 py-2 dark:text-white'>
                        {options.map((option,index)=>(
                            <div key={index}
                            className="p-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-400 text-[14px] font-roboto"

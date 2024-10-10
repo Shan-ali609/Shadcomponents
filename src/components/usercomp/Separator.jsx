@@ -3,7 +3,7 @@
  export default function Separator() {
    return (
      <div className='flex flex-col py-44 '>
-              <div className='border-b-2 pb-4 dark:text-white'>
+              <div className='border-b dark:border-white/20 pb-4 dark:text-white'>
                  <p className='text-[15px]'>Radix Primitives</p>
                  <p className='text-[14px] text-gray-400/90 dark:text-gray-400'>An open-source UI component library.</p>
                 </div>

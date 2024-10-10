@@ -9,7 +9,7 @@ const Switch = () => {
   };
 
   return (
-    <div className="flex items-center dark:text-white py-44">
+    <div className="flex items-center gap-2 dark:text-white py-44">
   
          
 

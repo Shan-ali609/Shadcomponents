@@ -18,7 +18,7 @@ export default function Skeleton() {
 
 function Landingcomp() {
   return(
-    <div className='flex items-center gap-3 animate-pulse'>
+    <div className='flex items-center gap-3 animate-pulse py-44'>
 
       <div className='h-11 w-11 rounded-full bg-gray-800/20 dark:bg-gray-400'> </div>
        <div className='flex flex-col gap-2' >

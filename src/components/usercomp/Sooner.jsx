@@ -21,7 +21,7 @@ const MyComponent = () => {
 
   return (
     <div className="py-44">
-      <button onClick={notify} className="border-2 px-6 py-1 text-[14px] font-roboto text-black/80 rounded-sm hover:bg-gray-300/20 dark:text-white dark:hover:bg-gray-400">
+      <button onClick={notify} className="border dark:border-white/20 px-6 py-1 text-[14px] font-roboto text-black/80 rounded-sm hover:bg-gray-300/20 dark:text-white dark:hover:bg-gray-400">
         Show Toast
       </button>
       <ToastContainer theme={theme === "light" ? "light" : "dark"}   />

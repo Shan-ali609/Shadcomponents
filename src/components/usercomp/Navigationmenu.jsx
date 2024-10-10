@@ -20,7 +20,7 @@ export default function Navigationmenu() {
         onMouseEnter={() => handleMouseEnter('gettingStarted1')} 
         onMouseLeave={handleMouseLeave}
       >
-        <p className='font-roboto'>Getting started</p>
+        <p className='font-roboto dark:text-white/70 '>Getting started</p>
         <SlArrowDown 
           className={`transform transition-transform duration-300 ${hoveredItem === 'gettingStarted1' ? 'rotate-180' : ''}`} 
         />
@@ -65,16 +65,16 @@ export default function Navigationmenu() {
         onMouseEnter={() => handleMouseEnter('Components')} 
         onMouseLeave={handleMouseLeave}
       >
-        Components
+       <p className='dark:text-white/70'>Components</p> 
         <SlArrowDown 
           className={`transform transition-transform duration-300 ${hoveredItem === 'Components' ? 'rotate-180' : ''}`} 
         />
 
         {hoveredItem === 'Components' && (
-          <div className="absolute top-full left-0 w-[550px]  p-4 dark:text-white dark:bg-black  bg-white border rounded-lg shadow-lg">
+          <div className="absolute top-full left-0 w-[550px] z-50  p-4 dark:text-white dark:bg-black  bg-white border rounded-lg shadow-lg">
               <div className='flex gap-3'>
               <div className='flex flex-col gap-3'> 
-                   <div className='hover:bg-gray-300/30'>
+                   <div className='hover:bg-gray-300/30 dark:hover:bg-white/10 '>
                      <h2 className='font-roboto'>Hide</h2>
                      <p>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>

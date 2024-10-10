@@ -23,7 +23,7 @@ export default function OTPInput() {
           value={value}
           maxLength="1"
           onChange={(e) => handleChange(e.target.value, index)}
-          className="w-10 h-10 text-center text-lg border border-gray-300 dark:bg-black rounded-md focus:outline-none focus:ring-2 dark:focus:ring-white "
+          className="w-10 h-10 text-center text-lg border dark:border-white/20 border-gray-300 dark:bg-black rounded-md focus:outline-none focus:ring-2 dark:focus:ring-white "
         />
       ))}
     </div>

@@ -37,7 +37,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full border-b dark:border-white/20  md:px-0 lg:px-10 xl:px-14 h-[56px] text-[rgb(4,4,4)] flex justify-between items-center p-2 fixed z-50 bg-white dark:bg-black">
+      <nav className="w-full border-b dark:border-white/10  md:px-0 lg:px-10 xl:px-14 h-[56px] text-[rgb(4,4,4)] flex justify-between items-center p-2 fixed z-50 bg-white dark:bg-black">
         <button
           className="imburger dark:text-white"
           aria-label="Toggle navigation"
@@ -75,7 +75,7 @@ export default function Navbar() {
 
         <div className="icons-pov">
           <div>
-            {/* Trigger Popup */}
+         
             <button onClick={() => setIsSearchPopupOpen(true)}>
               <Mysearch navsearch={true} />
             </button>

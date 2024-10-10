@@ -8,7 +8,7 @@ export default function Radiogroup() {
   };
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col my-44'>
       <label className='dark:text-white flex gap-2'>
         <input
           type="radio"

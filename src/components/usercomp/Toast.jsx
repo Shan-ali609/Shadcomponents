@@ -23,7 +23,7 @@ const Toast = () => {
 
   return (
     <div className="py-44">
-      <button onClick={notify} className="border px-6 py-2 text-[14px] font-roboto rounded-sm hover:bg-slate-100 dark:text-white dark:hover:bg-gray-400">
+      <button onClick={notify} className="border dark:border-white/20  px-6 py-2 text-[14px] font-roboto rounded-sm hover:bg-slate-100 dark:text-white dark:hover:bg-white/10">
         Show Toast
       </button>
       <ToastContainer theme={theme === "light" ? "light" : "dark"} />

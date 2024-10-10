@@ -5,7 +5,7 @@ import "@/components/pagecomp/main.css";
 import { IoMdOpen } from "react-icons/io";
 export default function Maintitle({ title, para }) {
   return (
-    <div className="accordion pt-14 border-b dark:border-white/20 ">
+    <div className="accordion pt-14 border-b dark:border-white/10 ">
       <div className="little-title">
         <h3 className="forever dark:text-white/70 raleway ">Docs</h3>
         <SlArrowRight className="right-side dark:text-white" />
