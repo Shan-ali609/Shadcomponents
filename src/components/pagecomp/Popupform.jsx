@@ -58,12 +58,12 @@ export default function Popupform({
     pwdform ? (
    
       <>
-      <span className=" dark:text-white/50">   Change your password here. After saving, you'll be logged out.</span>
+      <span className=" dark:text-white/50">   Change your password here. After saving you&apos;ll be logged out.</span>
     </>
     ) : (
       <>
         <span className=" dark:text-white/50">Make changes to your profile here.{" "}
-        Click save when you're done.</span>
+        Click save when you are done.</span>
       </>
     )
   ) : (
