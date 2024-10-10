@@ -29,10 +29,7 @@ export default function Table() {
                     <h1 className='w-1/4 text-right'>{item.Salary}$</h1> 
                 </div>
             ))}
-            <div className='flex justify-between'>
-                <h1>Total</h1>
-                <p>$2500.00</p>
-            </div>
+          
             <div className='w-full text-center py-4 font-roboto text-black/60 dark:text-white/50'>
                 <p className='text-center font-raleway'>A list of your recent invoices.</p>
             </div>

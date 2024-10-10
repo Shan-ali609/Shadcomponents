@@ -7,7 +7,7 @@ export default function Tabs() {
 
     return (
         <>
-            <div className=' w-400px dark:text-white'>
+            <div className=' w-400px dark:text-white px-5 sm:py-10 md:py-16 lg:py-24 pb-3'>
                 <div className='flex justify-between items-center rounded-sm  bg-black/10 dark:bg-white/10 h-10'>
                     <button
                         className={`  ml-3 px-[50px] rounded-lg h-8 ${activeTab === 'account' ? 'bg-gray-400/40 shadow-lg dark:bg-black' : '  '}`}
