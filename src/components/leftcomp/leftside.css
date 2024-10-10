@@ -1,94 +1,88 @@
- .left-container { 
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: flex-start; 
-         height:calc(100vh - 53px);  
-         overflow: hidden;
-    }
-    
-    .comp-heading {
-         margin-bottom: 20px;
-         margin-top: 60px;  
-        display: flex;
-        align-items: flex-start; 
-    }
-    
-    .scroll-container {
-        overflow-y: auto; 
-        flex-grow: 1;
-        
-        
-    }
-    
+.left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: calc(100vh - 53px);
+  overflow: hidden;
+}
 
-    .scroll-container::-webkit-scrollbar {
-        width: 8px; 
-    }
-    
-    .scroll-container::-webkit-scrollbar-track {
-        background: white; 
-    }
-    
-    .scroll-container::-webkit-scrollbar-thumb {
-        background: white; 
-        border-radius: 10px; 
-    }
-    
-    .scroll-container::-webkit-scrollbar-thumb:hover {
-        background: white; 
-    }
-    
-    
-    .scroll-container {
-        scrollbar-width: thin; 
-        scrollbar-color: white white; 
-        border-radius: 8px;
-    }
-    .scroll-container:hover {
-        scrollbar-width: thin; 
-        scrollbar-color: #e9e9e9 white; 
-        border-radius: 8px;
-    }
-    
-    .left-ul {
-        width: 100%; 
-        padding-left: 40px;
-    }
-    .left-ul li:first-child {
-        color: black;
-        pointer-events: none;
-        
-    }
-    .left-ul li:first-child {
-    
-        font-size: 15px;
-        font-weight: bold; 
-        cursor: context-menu;
-        text-decoration: none;
-    }
-    
-    .left-li {
-        padding: 10px 0px 10px 0px; 
-        text-align: start;
-        font-size: 13px;
-        font-weight: 500;
-        color: #999;
-    }
-    
-    .left-li.shan {
-        color: black; 
-        font-weight: bold; 
-    }
-    
-    .left-li:hover {
-        text-decoration: underline; 
-    }
-    
-    .left-a {
-        text-decoration: none; 
-      
-    }
-  
-    
-    
+.comp-heading {
+  margin-bottom: 20px;
+  margin-top: 60px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.scroll-container {
+  overflow-y: auto;
+  /* flex-grow: 1; */
+}
+.textdoc {
+  font-weight: bolder;
+}
+
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: white white;
+  border-radius: 8px;
+}
+.scroll-container:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #e9e9e9 white;
+  border-radius: 8px;
+}
+.dark .scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: #2e2e2e #121212;
+}
+
+.dark .scroll-container:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #505050 #2e2e2e;
+}
+
+.left-ul {
+  width: 100%;
+  padding-left: 40px;
+}
+.left-ul li:first-child {
+  color: black;
+  pointer-events: none;
+}
+.dark .left-ul li:first-child {
+  color: white;
+  opacity: 90%;
+  /* Dark mode color */
+}
+
+.left-ul li:first-child {
+  font-size: 15px;
+  font-weight: bold;
+  cursor: context-menu;
+  text-decoration: none;
+}
+
+.left-li {
+  padding: 6px 0px 6px 0px;
+  text-align: start;
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+}
+
+.left-li.shan {
+  color: black;
+  font-weight: bold;
+}
+
+.left-li:hover {
+  text-decoration: underline;
+}
+
+.left-a {
+  text-decoration: none;
+  /* padding-right: 150px;
+        padding-top: 6px;
+        padding-bottom: 6px; */
+}

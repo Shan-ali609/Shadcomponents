@@ -11,6 +11,10 @@ export default function Drawer() {
     setIsOpen(!isOpen);
   };
 
+   const handleclose = () => {
+    setIsOpen(false);
+   }
+
   const incrementCounter = () => {
     if (counter < 400) {
       setCounter(counter + 10);
@@ -24,9 +28,9 @@ export default function Drawer() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative py-40">
       <button
-        className="px-4 py-2  text-black border rounded-lg"
+        className="px-4 py-2 font-roboto text-[14px]  text-black border rounded-lg dark:text-white"
         onClick={toggleDrawer}
       >
         Open Drawer
@@ -34,7 +38,7 @@ export default function Drawer() {
 
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-50 z-30"
+          className="fixed inset-0 bg-black dark:bg-white opacity-50 z-30"
           onClick={toggleDrawer}
         ></div>
       )}
@@ -45,53 +49,55 @@ export default function Drawer() {
         } h-2/3 rounded-t-lg shadow-lg`}
       >
         <div className="absolute top-16 left-1/2 transform -translate-x-1/2  ">
-          <h2 className="text-lg font-bold">Move Goal</h2>
-          <p>Set your daily activity goal</p>
+          <h2 className="text-lg font-bold dark:text-black ">Move Goal</h2>
+          <p className="dark:text-black">Set your daily activity goal</p>
 
           <div className="flex items-center justify-center gap-16 mt-4">
             <button
               onClick={decrementCounter}
-              className="p-1 rounded-full border"
+              className="p-1 rounded-full border dark:text:white"
             >
               <LuMinus className="text-xl" />
             </button>
 
-            <div className="text-7xl font-bold">{counter}</div>
+            <div className="text-7xl font-bold dark:text:white">{counter}</div>
 
             <button
               onClick={incrementCounter}
-              className="p-1 rounded-full border"
+              className="p-1 rounded-full border dark:text:white "
             >
               <FaPlus className="text-xl" />
             </button>
           </div>
           <div>
-            <p className="text-xs text-center">CALORIES/DAY</p>
+            <p className="text-xs text-center dark:text:white ">CALORIES/DAY</p>
           </div>
 
           <div className="flex items-end gap-2 overflow-hidden  mt-9">
-            <div className="bg-black w-[22px] h-[100px]"></div>
-            <div className="bg-black w-[22px] h-[55px]"></div>
-            <div className="bg-black w-[22px] h-[80px]"></div>
-            <div className="bg-black w-[22px] h-[60px]"></div>
-            <div className="bg-black w-[22px] h-[40px]"></div>
-            <div className="bg-black w-[22px] h-[65px]"></div>
-            <div className="bg-black w-[22px] h-[35px]"></div>
-            <div className="bg-black w-[22px] h-[75px]"></div>
-            <div className="bg-black w-[22px] h-[45px]"></div>
-            <div className="bg-black w-[22px] h-[55px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[100px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[55px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[80px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[60px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[40px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[65px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[35px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[75px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[45px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[55px]"></div>
           </div>
 
           <div className="flex flex-col w-full pt-4 gap-3 ">
             <button
               type="button"
-              className="w-full border-2 bg-black text-white py-1 rounded-sm"
+              className="w-full border-2 bg-black text-white dark:bg-black  py-1 rounded-sm"
+              onClick={handleclose}
             >
               Submit
             </button>
             <button
               type="button"
-              className="w-full border-2  text-black py-1 rounded-sm"
+              className="w-full border-2  text-black dark:text:white py-1 rounded-sm"
+              onClick={handleclose}
             >
               Cancel
             </button>

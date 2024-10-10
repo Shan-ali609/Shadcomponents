@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function OTPInput() {
-  const [otp, setOtp] = useState(['', '', '', '-', '', '', '']); 
+  const [otp, setOtp] = useState(['', '', '','', '', '']); 
 
   const handleChange = (value, index) => {
     const newOtp = [...otp];
@@ -14,7 +14,7 @@ export default function OTPInput() {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 py-48 ">
       {otp.map((value, index) => (
         <input
           key={index}
@@ -23,7 +23,7 @@ export default function OTPInput() {
           value={value}
           maxLength="1"
           onChange={(e) => handleChange(e.target.value, index)}
-          className="w-10 h-10 text-center text-lg border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-10 h-10 text-center text-lg border dark:border-white/20 border-gray-300 dark:bg-black rounded-md focus:outline-none focus:ring-2 dark:focus:ring-white "
         />
       ))}
     </div>

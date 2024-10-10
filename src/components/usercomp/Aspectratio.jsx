@@ -7,8 +7,15 @@ export default function Aspectratio() {
 
 
     
-        <div className='w-full h-80 mx-12 rounded my-30  bg-slate-500'>
-
+        <div className=' w-full h-auto m-10  '>
+         <div className="h-[450px]">
+         <Image src="/images/shadcn.webp"
+           height={700}
+           width={900}
+           className='rounded'
+           alt='Alert'
+           />
+         </div>
         </div>
     
 

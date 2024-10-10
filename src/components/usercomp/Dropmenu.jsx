@@ -6,16 +6,19 @@ export default function Dropmenu() {
  const handleit = ()=>{
     setopenclick(!openclick);
  }
+ const handleclose = () => {
+     setopenclick (false);
+ }
   return (
-    <div>
+    <div className=' relative py-56 '>
               
-              <div className=' relative border px-3 py-2 rounded-md hover:bg-slate-300'>
-                <button type='button' onClick={handleit} >Open</button>
+              <div className='  border rounded-md hover:bg-slate-300 dark:text-white dark:hover:bg-gray-400 '>
+                <button type='button' className=' px-3 py-2 font-roboto text-[14px] ' onClick={handleit} >Open</button>
               </div>
 
           {openclick && (
-            <div className='absolute '>
-            <Command dropprop = {true} />
+            <div className='absolute  '>
+            <Command dropprop = {true} handleclose = {handleclose} />
             </div>
           )}
 

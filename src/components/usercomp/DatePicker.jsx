@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function DatePicker() {
   return (
-    <div className='border px-7 py-2 rounded-md'>
+    <div className='border px-7 py-2 rounded-md dark:bg-white dark:focus:outline-none my-52'>
         <input type='date' placeholder='pick a date' />
     </div>
   )

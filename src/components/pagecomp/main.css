@@ -3,13 +3,13 @@
    .little-title{
     display: flex;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
    }
    .forever{
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
     color: #666;
     line-height: 12px;
    }
@@ -31,10 +31,7 @@
   }
   
   .detail {
-      padding-top: 10px;
-      font-family: "Roboto", sans-serif;
-      font-weight: 500;
-      color: #999;
+      padding-top: 10px;    
   }
   
   .border-hero {
@@ -51,17 +48,19 @@
   
   .preview {
       /* padding-top: 80px; */
-      padding-bottom: 14px;
-      color: black;
-      font-size: 17px;
-      font-weight: 600;
-      border-bottom: 1px solid #bbb;
+   
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      display: inline-block;
+      /* border-bottom: 1px solid #bbb; */
   }
+
   
-  .link-tot {
+  /* .link-tot {
       text-decoration: underline;
       text-underline-offset: 22px;
-  }
+  } */
   
   .accordion-container {
       width: 100%; 
@@ -150,7 +149,8 @@
       }
   
       .preview {
-          font-size: 16px; 
+        font-size: 17px;
+        font-weight: 600;
       }
   
       .head-section {
