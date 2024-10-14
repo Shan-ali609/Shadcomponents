@@ -13,7 +13,7 @@ export default function Navigationmenu() {
   };
 
   return (
-    <div className="flex gap-11 py-44">
+    <div className="flex gap-11 py-44 px-7">
       
       <div 
         className="relative  text-[14px] flex items-center gap-3 cursor-pointer dark:text-white " 
@@ -26,31 +26,40 @@ export default function Navigationmenu() {
         />
 
         {hoveredItem === 'gettingStarted1' && (
-          <div className="absolute  text-[14px] top-full left-0 dark:text-white dark:bg-black  w-[550px] p-4 bg-white border rounded-lg shadow-lg">
+          <div className="absolute  text-[14px] top-full left-0 dark:text-white dark:bg-black  w-[380px] lg:w-[540px] p-4 bg-white border rounded-lg shadow-lg">
                
-               <div className='flex gap-2'>
+               <div className='flex flex-wrap md:flex-nowrap gap-2'>
                  
-                 <div className='max-w-48 h-[220px] bg-gray-400/35 text-center flex items-end'>
+                 <div className='w-full md:max-w-48 lg:max-w-48 h-[50px] md:h-[220px] lg:h-[220px]  bg-gray-400/35 text-center flex items-end'>
                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                  </div>
                    <div className='flex flex-col gap-3'> 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
+
+                   <div className='hover:bg-gray-300/30'>
+                     <h2 className='font-roboto'>Hide</h2>
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
+                       nemo quas nisi aut, am!</p>
+                   </div>
+
+                 
+
                    </div>
 
                </div>
@@ -71,43 +80,43 @@ export default function Navigationmenu() {
         />
 
         {hoveredItem === 'Components' && (
-          <div className="absolute top-full left-0 w-[550px] z-50  p-4 dark:text-white dark:bg-black  bg-white border rounded-lg shadow-lg">
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-[380px] sm:w-[440px] md:w-[470px] lg:w-[530px] z-50  p-2 dark:text-white dark:bg-black  bg-white border rounded-lg shadow-lg">
               <div className='flex gap-3'>
               <div className='flex flex-col gap-3'> 
                    <div className='hover:bg-gray-300/30 dark:hover:bg-white/10 '>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
                    </div>
                    <div className='flex flex-col gap-3'> 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
 
                    <div className='hover:bg-gray-300/30'>
                      <h2 className='font-roboto'>Hide</h2>
-                     <p>Lorem ipsum, dolor seat non,
+                     <p className='text-[12px] text-black/70'>Lorem ipsum, dolor seat non,
                        nemo quas nisi aut, am!</p>
                    </div>
                    </div>

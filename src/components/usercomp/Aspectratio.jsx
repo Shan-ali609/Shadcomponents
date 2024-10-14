@@ -7,8 +7,8 @@ export default function Aspectratio() {
 
 
     
-        <div className=' w-full h-auto m-10  '>
-         <div className="h-[450px]">
+        <div className=' w-full h-auto px-3  '>
+         <div className="h-[450px]  flex items-center">
          <Image src="/images/shadcn.webp"
            height={700}
            width={900}

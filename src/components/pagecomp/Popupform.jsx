@@ -24,11 +24,11 @@ export default function Popupform({
             dialprop
               ? accountform
                 ? "bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  "
-                : "bg-white p-6 rounded-md shadow-md max-w-[450px] dark:bg-black dark:border-white/20 "
-              : "bg-white p-6 rounded-md shadow-md max-w-[510px] dark:bg-black dark:border-white/20"
+                :sheetcond ? "bg-white p-6 rounded-md shadow-md w-[286px] md:max-w-[450px] lg:max-w-[450px] dark:bg-black dark:border-white/20 " : "bg-white p-6 rounded-md shadow-md w-full md:max-w-[450px] lg:max-w-[450px] dark:bg-black dark:border-white/20 "
+              : "bg-white p-6 rounded-md  shadow-md max-w-[510px] dark:bg-black dark:border-white/20"
           }`}
         >
-          <h2 className="text-lg font-roboto dark:text-white">
+          <h2 className="text-lg font-roboto text-center md:text-left  lg:text-left dark:text-white">
             {dialprop
               ? accountform
                 ? pwdform
@@ -51,7 +51,7 @@ export default function Popupform({
   className={`${
     dialprop
       ? "text-[15px] text-gray-500 dark:text-gray-200"
-      : "dark:text-gray-200 text-[14px] py-2 text-black/80"
+      : "dark:text-gray-200 text-[14px] py-2 text-black/80 text-center md:text-left lg:text-left"
   }`}
 >
   {dialprop ? (
@@ -75,7 +75,7 @@ export default function Popupform({
             <div>
               <div
                 className={`${
-                  accountform ? " py-3 " : "flex gap-2 py-3 ml-20 "
+                  accountform ? " py-3 " : "flex gap-2 py-3 justify-center md:justify-end lg:justify-end "
                 }     `}
               >
                 <p className={` ${accountform ? " text-md" : "text-[14px] dark:text-white "} `}>
@@ -94,7 +94,7 @@ export default function Popupform({
               </div>
               <div
                 className={`${
-                  accountform ? " " : "flex gap-2 py-3 ml-[44px]"
+                  accountform ? " " : "flex gap-2 py-3  justify-center md:justify-end lg:justify-end"
                 }     `}
               >
                 <p className={` ${accountform ? " text-md" : "text-[14px] dark:text-white "} `}>
@@ -115,13 +115,13 @@ export default function Popupform({
           )}
           <div
             className={` ${
-              accountform ? "flex justify-start mt-4" : "flex justify-end mt-4"
+              accountform ? "flex justify-start mt-4" : "flex flex-wrap-reverse md:justify-end mt-4 gap-2 w-full"
             }`}
           >
             {accountbtn && (
               <button
                 onClick={onClose}
-                className="border px-3 py-1 rounded-md bg-white hover:bg-gray-200"
+                className={`  ${dialprop ? "border px-3 py-1 rounded-md dark:text-white  " :  " border px-3 w-full md:w-20  lg:w-20  py-1 rounded-md bg-white hover:bg-gray-200 "} `  }
               >
                 Close
               </button>
@@ -132,7 +132,7 @@ export default function Popupform({
               className={` ${
                 accountform
                   ? " border dark:border-white/20 px-3 py-1 text-white rounded-md bg-black"
-                  : "ml-3 border dark:border-white/20 px-3 py-1 text-white rounded-md bg-black dark:text-black dark:bg-white"
+                  : dialprop ? " border  px-3 py-1 rounded-md bg-black text-white dark:bg-white dark:text-black" : "  w-full md:w-24 lg:w-24  border dark:border-white/20 px-3 py-1 text-white rounded-md bg-black dark:text-black dark:bg-white"
               }`}
             >
               {dialprop ? "Save Changes" : "Continue"}

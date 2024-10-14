@@ -27,9 +27,9 @@ function AppState({ children }) {
         break;
     }
   }, [theme]);
-
+   const shetcond =  true;
   return (
-    <AppStateContext.Provider value={{ theme, setTheme }}>
+    <AppStateContext.Provider value={{ theme, setTheme , shetcond }}>
       {children}
     </AppStateContext.Provider>
   );

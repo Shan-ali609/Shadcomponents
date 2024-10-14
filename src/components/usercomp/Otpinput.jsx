@@ -14,7 +14,7 @@ export default function OTPInput() {
   };
 
   return (
-    <div className="flex gap-2 py-48 ">
+    <div className="flex gap-2 py-48 px-7 ">
       {otp.map((value, index) => (
         <input
           key={index}

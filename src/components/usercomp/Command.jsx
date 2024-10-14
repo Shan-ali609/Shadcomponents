@@ -11,8 +11,8 @@ export default function Command({dropprop,handleclose}) {
     <>
 
 
-                <div className={`  ${dropprop ? " w-[250px] h-auto border rounded-sm shadow-lg  " : " w-[450px] h-auto my-14 border dark:border-white/20 rounded-sm shadow-lg"}    ` }>
-               <div className={`  ${dropprop ? " pl-3 border dark:text-white" : " "}    ` }>  
+                <div className={`  ${dropprop ? "md:w-[230px] lg:w-[250px] sm:w-[200px]    w-[185px]  dark:bg-black bg-white h-auto border dark:border-white/15 rounded-sm shadow-lg  " : " w-[450px] h-auto my-14 border dark:border-white/20 rounded-sm shadow-lg mx-9 "}    ` }>
+               <div className={`  ${dropprop ? " pl-3 border dark:border-white/15 dark:text-white" : " "}    ` }>  
                  {dropprop ? "My Account" : <Mysearch />} 
                </div>
                    <div className='border-b  dark:border-white/20 ' >

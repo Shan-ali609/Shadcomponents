@@ -14,7 +14,7 @@ import Mybutton from '../pagecomp/Mybutton'
                <div  >
               
                    
-                    <div className=' h-[450px] flex flex-col justify-center items-center  dark:text-white '>
+                    <div className=' h-[450px] flex flex-col justify-center items-center px-4  dark:text-white '>
                        <p className='text-sm flex font-bold'>@peduarte starred 3 repositories   <div onClick={show} > <Mybutton /> </div></p> 
                      
                    

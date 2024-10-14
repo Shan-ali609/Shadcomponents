@@ -70,7 +70,7 @@ export default function MyDropdown({ data, cond }) {
         <div
           className={` ${
             cond
-              ? "absolute z-10 top-full  bg-white border dark:border-white/20 rounded-md w-44 dark:bg-black dark:text-white"
+              ? "absolute z-10 top-full  bg-white border dark:border-white/20 rounded-md w-52 dark:bg-black dark:text-white"
               : "dark:bg-black dark:text-white absolute z-10 top-full  bg-white border dark:border-white/20 rounded-md w-36"
           } `}
         >

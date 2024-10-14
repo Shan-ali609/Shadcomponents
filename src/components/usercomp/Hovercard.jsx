@@ -11,7 +11,7 @@ export default function Hovercard() {
       </div>
 
       
-      <div className="absolute top-full left-0 mt-2 w-64 p-4 bg-white dark:bg-black border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute top-full left-0 mt-2 w-44 sm:w-52 md:w-64 lg:w-64 p-4 bg-white dark:bg-black border rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <div className='flex items-center gap-4 dark:text-white'>
         <FaPlayCircle />
         <h4 className="text-lg font-bold ">Nextjs</h4>
