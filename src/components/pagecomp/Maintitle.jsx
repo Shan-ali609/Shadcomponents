@@ -42,7 +42,7 @@ export default function Maintitle({ title, para }) {
       </div>
 
       <h3 className="preview ">
-        <div  className="link-tot text-black/70 font-roboto px-3 border-b-2 dark:border-white/85 border-black  pb-1  dark:text-white/90">
+        <div  className=" text-[15px] md:text-[17px] lg:text-[17px] link-tot text-black/90 font-roboto px-3 border-b-2 dark:border-white/85 border-black  pb-1  dark:text-white/90">
           Preview
         </div>
       </h3>

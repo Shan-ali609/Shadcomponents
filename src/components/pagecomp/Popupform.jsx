@@ -24,7 +24,7 @@ export default function Popupform({
             dialprop
               ? accountform
                 ? "bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  "
-                :sheetcond ? "bg-white p-6 rounded-md shadow-md w-[286px] md:max-w-[450px] lg:max-w-[450px] dark:bg-black dark:border-white/20 " : "bg-white p-6 rounded-md shadow-md w-full md:max-w-[450px] lg:max-w-[450px] dark:bg-black dark:border-white/20 "
+                :sheetcond ? "bg-white p-6 rounded-md shadow-md w-[286px] md:w-[450px] lg:w-[450px] dark:bg-black dark:border-white/20 " : "bg-white p-6 rounded-md shadow-md w-full md:max-w-[450px] lg:max-w-[450px] dark:bg-black dark:border-white/20 "
               : "bg-white p-6 rounded-md  shadow-md max-w-[510px] dark:bg-black dark:border-white/20"
           }`}
         >

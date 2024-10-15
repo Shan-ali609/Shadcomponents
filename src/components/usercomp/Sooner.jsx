@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 function Sooner() {
   const [toasts, setToasts] = useState([]);
   const [toastId, setToastId] = useState(1);
-  const [hoveredIndex, setHoveredIndex] = useState(false); 
+  const [isHovered, setIsHovered] = useState(false); 
 
   const showNewToast = () => {
     const newToast = { 
@@ -39,37 +39,37 @@ function Sooner() {
       <div className='dark:bg-black dark:text-white border rounded-md px-2 py-1 dark:border-white/15'>
         <button
           onClick={showNewToast}
-          className=" text-[14px] "
+          className="text-[14px]"
         >
           Show Toast
         </button>
       </div>
-      {toasts.map((toast, index) => (
-        <div
-          key={toast.id}
-          className="fixed flex mx-2 md:right-5 lg:right-5 z-50 p-4 border dark:bg-black dark:text-white dark:border-white/15 bg-white text-black rounded-lg shadow-lg toast-animation"
-          style={{
-            bottom: `${hoveredIndex  ? 25 + index * 110 : 25 + index * -10}px`, 
-            transition: 'transform 0.5s ease, opacity 0.5s ease',
-          }}
-          onMouseEnter={() => setHoveredIndex(true)} 
-          onMouseLeave={() => setHoveredIndex(false)} 
-        >
-          <div className="flex flex-col mr-4">
-            <div className="font-bold">{toast.Title}</div>
-            <p className='text-[12px]'>{toast.Description}</p>
-            <div>{toast.id}</div>
+      <div
+        className={`fixed bottom-0 z-50 right-5 mb-4 transition-all duration-500 ${isHovered ? 'space-y-2' : 'space-y-[-90px]'}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {toasts.map((toast, index) => (
+          <div
+            key={toast.id}
+            className="flex mx-2 md:right-5 lg:right-5 z-50 p-4 border dark:bg-black dark:text-white dark:border-white/15 bg-white text-black rounded-lg shadow-lg toast-animation"
+          >
+            <div className="flex flex-col mr-4 ">
+              <div className="font-bold">{toast.Title}</div>
+              <p className='text-[12px]'>{toast.Description}</p>
+              <div>{toast.id}</div>
+            </div>
+            <div>
+              <button
+                onClick={() => removeToast(toast.id)}
+                className="text-white dark:bg-white dark:text-black bg-black px-2 py-1 text-[11px] rounded-md hover:text-gray-300"
+              >
+                Undo
+              </button>
+            </div>
           </div>
-          <div>
-            <button
-              onClick={() => removeToast(toast.id)}
-              className="text-white dark:bg-white dark:text-black bg-black px-2 py-1 text-[11px] rounded-md hover:text-gray-300"
-            >
-              Undo
-            </button>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       <style jsx>{`
         .toast-animation {

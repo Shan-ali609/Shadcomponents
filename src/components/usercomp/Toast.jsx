@@ -155,12 +155,12 @@ function Toast() {
         >
           <div className='flex flex-col'>
             <h4 className="font-bold text-sm">{toast.title}</h4>
-            <p className="text-sm text-white/50">{toast.message}</p>
+            <p className="text-sm text-black dark:text-white/50">{toast.message}</p>
           </div>
           <div>
           <button
             onClick={handleUndo}
-            className="mt-2 px-2 py-1 bg-black text-[12px] text-white rounded-md"
+            className="mt-2 px-2 py-1 bg-black text-[12px] dark:bg-white dark:text-black  text-white rounded-md"
           >
             Undo
           </button>

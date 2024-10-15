@@ -48,7 +48,7 @@ export default function Drawer() {
           isOpen ? "translate-y-0" : "translate-y-full"
         } h-2/3 rounded-t-lg shadow-lg`}
       >
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2  ">
+        <div className="absolute bottom-0 mb-3 left-1/2 transform -translate-x-1/2  ">
           <h2 className="text-lg font-bold dark:text-black ">Move Goal</h2>
           <p className="dark:text-black">Set your daily activity goal</p>
 

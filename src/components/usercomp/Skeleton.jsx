@@ -10,7 +10,7 @@ export default function Skeleton() {
        },[])
     return (
     <div className='p-8 flex flex-wrap text-4xl' >
-      {!isloading ? <Landingcomp /> : <div>data</div>}
+      {!isloading ? <Landingcomp /> : <div>...</div>}
     </div>
   )
 }

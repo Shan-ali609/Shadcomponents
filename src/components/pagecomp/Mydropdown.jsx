@@ -4,7 +4,7 @@ import Mybutton from "./Mybutton";
 import { AiOutlineInbox } from "react-icons/ai";
 import { FaArrowUpRightDots } from "react-icons/fa6";
 export default function MyDropdown({ data, cond }) {
-  // const data = ["New york", "Default"];
+ 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(data[0]);
 
@@ -22,7 +22,9 @@ export default function MyDropdown({ data, cond }) {
       <div
         className={` ${
           cond
-            ? "w-52 cursor-pointer h-6 flex justify-between border dark:border-white/20 py-4 px-2 items-center rounded-md dark:text-white "  : "cursor-pointer  flex rounded-md border dark:border-white/20 w-36 pl-2 dark:text-white "} `}
+            ? "w-52 cursor-pointer h-6 flex justify-between border dark:border-white/20 py-4 px-2 items-center rounded-md dark:text-white "
+            : "cursor-pointer  flex rounded-md border dark:border-white/20 w-36 pl-2 dark:text-white "
+        } `}
         onClick={toggleDropdown}
       >
         <h4
@@ -61,8 +63,11 @@ export default function MyDropdown({ data, cond }) {
         )}
 
         <div className="border dark:border-white/20 py-[4px] px-1 rounded-md">
-          {cond ? "" :  <AiOutlineInbox className="text-md cursor-pointer dark:text-white  text-black " />}
-         {" "}
+          {cond ? (
+            ""
+          ) : (
+            <AiOutlineInbox className="text-md cursor-pointer dark:text-white  text-black " />
+          )}{" "}
         </div>
       </div>
 
@@ -86,8 +91,8 @@ export default function MyDropdown({ data, cond }) {
               key={index}
               className={` ${
                 cond
-                  ? "px-6 text-[14px] py-1 cursor-pointer text-gray-500 hover:bg-gray-200 dark:text-white"
-                  : "px-6 text-[12px] rounded-lg py-1 cursor-pointer dark:text-white text-gray-500 hover:bg-neutral-200 dark:hover:bg-neutral-600"
+                  ? "px-6 text-[14px] py-1 cursor-pointer text-gray-500 hover:bg-gray-200 dark:hover:bg-white/15 dark:text-white"
+                  : "px-6 text-[12px] rounded-lg py-1 cursor-pointer dark:text-white text-gray-500 hover:bg-neutral-200 dark:hover:bg-white/15"
               }`}
               onClick={() => handleOptionClick(option)}
             >
