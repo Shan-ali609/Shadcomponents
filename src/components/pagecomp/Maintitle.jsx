@@ -4,8 +4,9 @@ import Link from "next/link";
 import "@/components/pagecomp/main.css";
 import { IoMdOpen } from "react-icons/io";
 export default function Maintitle({ title, para }) {
+  
   return (
-    <div className="accordion pt-14 border-b dark:border-white/10 ">
+    <div className="accordion pt-14 dark:border-white/10 ">
       <div className="little-title">
         <h3 className="forever dark:text-white/70 raleway ">Docs</h3>
         <SlArrowRight className="right-side dark:text-white" />
@@ -14,7 +15,7 @@ export default function Maintitle({ title, para }) {
       <h1 className="head-section GeistSans  dark:text-white">{title}</h1>
       <p className="pt-[10px] Roboto text-black/70 dark:text-white/70   ">{para}</p>
 
-      <div className="pt-3  pb-10">
+      <div className="pt-3">
         <div className="inline-block">
           {" "}
           <Link
@@ -40,12 +41,10 @@ export default function Maintitle({ title, para }) {
           </Link>{" "}
         </div>
       </div>
+     
+       
 
-      <h3 className="preview ">
-        <div  className=" text-[15px] md:text-[17px] lg:text-[17px] link-tot text-black/90 font-roboto px-3 border-b-2 dark:border-white/85 border-black  pb-1  dark:text-white/90">
-          Preview
-        </div>
-      </h3>
-    </div>
+      </div>
+    
   );
 }

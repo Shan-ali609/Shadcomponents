@@ -17,7 +17,8 @@ export default function CustomSlider() {
         value={value}
         onChange={handleChange}
         style={{
-          background: `linear-gradient(to right, black 0%, black ${value}%, gray ${value}%, gray 100%)`,
+          background: `linear-gradient(to right, #b9e9ed 0%, #b9e9ed ${value}%, #e4eeed ${value}%, #e4eeed 100%)`,
+          
         }}
       />
       {/* <div className="text-lg font-semibold mt-4">{value}</div> */}
@@ -45,6 +46,8 @@ export default function CustomSlider() {
           background: gray; 
           border-radius: 9999px; 
         }
+
+        
       `}</style>
     </div>
   );

@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import Accountform from '@/components/pagecomp/Accountform'; 
 import Passwordform from '@/components/pagecomp/Passwordform'; 
