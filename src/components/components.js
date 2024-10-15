@@ -47,7 +47,7 @@ import Table from "./usercomp/Table";
 import Skeleton from "./usercomp/Skeleton";
 import Toast from "./usercomp/Toast";
 
-
+import Form from "./usercomp/Form"
 
 
 const components = [
@@ -202,6 +202,12 @@ const components = [
         slug : 'label',
         text : 'Renders an accessible label associated with controls.',
         Component: Label
+    },
+    {
+        Name : 'Form',
+        slug : 'form',
+        text : 'Renders an accessible label associated with controls.',
+        Component: Form
     },
     {
         Name : 'Menubar',

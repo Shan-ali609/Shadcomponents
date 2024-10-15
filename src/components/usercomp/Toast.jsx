@@ -123,7 +123,7 @@ function Toast() {
     if (toasts.length > 0) {
       const timer = setTimeout(() => {
         setToasts([]); 
-      }, 3000); // Toast stays for 3 seconds
+      }, 3000); 
       return () => clearTimeout(timer);
     }
   }, [toasts]);
