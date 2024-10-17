@@ -4,9 +4,10 @@ import Mybutton from "./Mybutton";
 import { AiOutlineInbox } from "react-icons/ai";
 import { FaArrowUpRightDots } from "react-icons/fa6";
 export default function MyDropdown({ data, cond }) {
- 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(data[0]);
+  const [selectedOption, setSelectedOption] = useState(
+    cond ? "select framework" : data[0]
+  );
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -18,7 +19,7 @@ export default function MyDropdown({ data, cond }) {
   };
 
   return (
-    <div className="relative flex items-center justify-between px-9  w-full">
+    <div className="relative flex items-center justify-between px-2 md:px-9 lg:px-9  w-full">
       <div
         className={` ${
           cond
@@ -53,11 +54,12 @@ export default function MyDropdown({ data, cond }) {
           }
         />
       </div>
-      <div className=" flex items-center gap-3 ">
+      <div className=" flex items-center gap-1 md:gap-3 lg:gap-3 ">
         {selectedOption === "Default" && (
           <div className="bg-black rounded-sm dark:bg-white ">
             <button className=" text-xs px-2  text-white dark:text-black py-1 flex ">
-              open in <FaArrowUpRightDots className="pl-1" />{" "}
+              open
+              <FaArrowUpRightDots className="pl-1" />{" "}
             </button>
           </div>
         )}
@@ -67,7 +69,7 @@ export default function MyDropdown({ data, cond }) {
             ""
           ) : (
             <AiOutlineInbox className="text-md cursor-pointer dark:text-white  text-black " />
-          )}{" "}
+          )}
         </div>
       </div>
 

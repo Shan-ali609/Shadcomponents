@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export default function Resizable() {
@@ -18,4 +17,3 @@ export default function Resizable() {
     </>
   );
 }
-

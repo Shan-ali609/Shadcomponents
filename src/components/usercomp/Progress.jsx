@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 export default function Progress() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
- 
     const timer = setTimeout(() => {
-      setProgress(50); 
-    }, 100); 
+      setProgress(50);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);

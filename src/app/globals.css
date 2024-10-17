@@ -32,6 +32,46 @@ body {
 .close-btn.open {
   left: 0;
 }
+/* Default Light Mode Scrollbar */
+.scroll-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
 
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: white; /* Color of the thumb (scroll bar handle) */
+  border-radius: 8px; /* Rounded corners for the thumb */
+}
 
+.scroll-container::-webkit-scrollbar-track {
+  background-color: white; /* Color of the scrollbar track */
+  border-radius: 8px; /* Rounded corners for the track */
+}
 
+/* Light Mode Hover Scrollbar */
+.scroll-container:hover::-webkit-scrollbar-thumb {
+  background-color: #e9e9e9; /* Lighter thumb color on hover */
+}
+
+.scroll-container:hover::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+/* Dark Mode Scrollbar */
+.dark .scroll-container::-webkit-scrollbar-thumb {
+  background-color: #2e2e2e; /* Dark thumb color */
+  border-radius: 8px;
+}
+
+.dark .scroll-container::-webkit-scrollbar-track {
+  background-color: #121212; /* Dark track color */
+  border-radius: 8px;
+}
+
+/* Dark Mode Hover Scrollbar */
+.dark .scroll-container:hover::-webkit-scrollbar-thumb {
+  background-color: #505050; /* Lighter thumb color on hover */
+}
+
+.dark .scroll-container:hover::-webkit-scrollbar-track {
+  background-color: #2e2e2e;
+}

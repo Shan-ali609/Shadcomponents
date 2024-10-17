@@ -39,22 +39,26 @@ export default function RootLayout({ children }) {
       window.removeEventListener("resize", hanldeResize);
     };
   }, []);
+  const gridClasses =
+    isleftvisible && isrightvisible
+      ? "grid-cols-[300px_1fr_300px]"
+      : isleftvisible
+      ? "grid-cols-[300px_1fr]"
+      : isrightvisible
+      ? "grid-cols-[1fr_300px]"
+      : "grid-cols-1";
 
   return (
     <html lang="en">
-      <body
-        // className="raleway.variable  "
-        className={`${raleway.variable} ${roboto.variable}`}
-      >
+      <body className={`${raleway.variable} ${roboto.variable}`}>
         <AppState>
           <Navbar />
-          <div
-            className={`max-w-screen  grid grid-cols-[300px_1fr] 1285:grid-cols-[300px_1fr_300px] `}
-          >
-            <div className="overflow-auto h-screen sticky dark:bg-black hidden md:block pl-16   top-0 mt-[52px]">
-              <Leftside />
-            </div>
-
+          <div className={`w-full grid ${gridClasses} `}>
+            {isleftvisible && (
+              <div className="overflow-auto h-screen sticky dark:bg-black hidden md:block pl-16   top-0 mt-[52px]">
+                <Leftside />
+              </div>
+            )}
             <div className="bg-white  dark:bg-black px-5 pt-4 pb-2  ">
               {children}
             </div>

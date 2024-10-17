@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "@/components/leftcomp/leftside.css";
-export default function Page({ params }) {
+export default function Page({ params, cond }) {
   const [activetab, setactivetab] = useState("preview");
   const slug = params.slug;
 
@@ -56,7 +56,7 @@ export default function Page({ params }) {
         {activetab === "preview" ? (
           <div className="w-full border  border-gray-300 dark:border-white/10 rounded-lg h-fill overflow-auto my-auto">
             <div className=" w-full flex justify-between px-1 pt-7 pb-5">
-              <MyDropdown data={["New york", "Default"]} />
+              <MyDropdown cond={false} data={["New york", "Default"]} />
             </div>
             <div className="w-full flex justify-center items-center h-auto">
               <ComponentToRender drp={component.list} />

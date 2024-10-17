@@ -11,9 +11,9 @@ export default function Drawer() {
     setIsOpen(!isOpen);
   };
 
-   const handleclose = () => {
+  const handleclose = () => {
     setIsOpen(false);
-   }
+  };
 
   const incrementCounter = () => {
     if (counter < 400) {

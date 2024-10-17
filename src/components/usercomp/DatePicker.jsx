@@ -1,34 +1,48 @@
-'use client'
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import { FaRegCalendarDays } from "react-icons/fa6";
-import Calendar from '../pagecomp/Calendar';
+import Calendar from "../pagecomp/Calendar";
 
 export default function DatePicker() {
-  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedDate, setSelectedDate] = useState("");
   const [showCalendar, setShowCalendar] = useState(false);
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
-  const daysInMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0).getDate();
-  const firstDayOfMonth = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1).getDay();
+  const daysInMonth = new Date(
+    currentMonth.getFullYear(),
+    currentMonth.getMonth() + 1,
+    0
+  ).getDate();
+  const firstDayOfMonth = new Date(
+    currentMonth.getFullYear(),
+    currentMonth.getMonth(),
+    1
+  ).getDay();
 
   const handleDateChange = (day) => {
-    const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    setSelectedDate(date.toLocaleDateString('en-US', options));
+    const date = new Date(
+      currentMonth.getFullYear(),
+      currentMonth.getMonth(),
+      day
+    );
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    setSelectedDate(date.toLocaleDateString("en-US", options));
     setShowCalendar(false);
   };
 
   const changeMonth = (offset) => {
-    setCurrentMonth(new Date(currentMonth.setMonth(currentMonth.getMonth() + offset)));
+    setCurrentMonth(
+      new Date(currentMonth.setMonth(currentMonth.getMonth() + offset))
+    );
   };
 
   const renderDays = () => {
     const daysArray = [];
-   
+
     for (let i = 0; i < firstDayOfMonth; i++) {
       daysArray.push(<div key={`empty-${i}`} className="p-2"></div>);
     }
-   
+
     for (let day = 1; day <= daysInMonth; day++) {
       daysArray.push(
         <div
@@ -60,9 +74,9 @@ export default function DatePicker() {
       </div>
       {showCalendar && (
         <Calendar
-          currentMonth={currentMonth}  
-          changeMonth={changeMonth}    
-          renderDays={renderDays}      
+          currentMonth={currentMonth}
+          changeMonth={changeMonth}
+          renderDays={renderDays}
         />
       )}
     </div>

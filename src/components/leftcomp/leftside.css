@@ -13,11 +13,6 @@
   display: flex;
   align-items: flex-start;
 }
-
-.scroll-container {
-  overflow-y: auto;
-  /* flex-grow: 1; */
-}
 .textdoc {
   font-weight: bolder;
 }
