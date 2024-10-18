@@ -25,7 +25,7 @@ export default function Popupform({
               ? accountform
                 ? "Tabs bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  "
                 : sheetcond
-                ? "sheet bg-white p-6 rounded-md shadow-md w-[286px] md:w-[450px] lg:w-[450px] dark:bg-black dark:border-white/20 "
+                ? "sheet bg-white border p-6 rounded-md shadow-md w-[286px] md:w-[450px] lg:w-[450px] dark:bg-black dark:border-white/20 "
                 : "Dialog bg-white p-6 rounded-md shadow-md w-full md:max-w-[450px] lg:max-w-[450px] dark:bg-black dark:border-white/20 "
               : "Alertdialog bg-white p-6 rounded-md  shadow-md max-w-[510px] dark:bg-black dark:border-white/20"
           }`}

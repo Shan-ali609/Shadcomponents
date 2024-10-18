@@ -5,10 +5,10 @@ export default function Skeleton() {
   useEffect(() => {
     setTimeout(() => {
       setisloading(false);
-    }, 5000);
+    });
   }, []);
   return (
-    <div className="p-8 flex flex-wrap text-4xl">
+    <div className="p-8 flex flex-wrap text-4xl dark:text-white">
       {!isloading ? <Landingcomp /> : <div>...</div>}
     </div>
   );
