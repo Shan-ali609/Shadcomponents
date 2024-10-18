@@ -5,21 +5,20 @@ import MyDropdown from "@/components/pagecomp/Mydropdown";
 import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { FaRegCopy, FaCheck } from "react-icons/fa6"; // Import both icons
+import { FaRegCopy, FaCheck } from "react-icons/fa6";
 import "@/components/leftcomp/leftside.css";
 
 export default function Page({ params, cond }) {
   const [activetab, setactivetab] = useState("preview");
-  const [copied, setCopied] = useState(false); // State for copy icon
+  const [copied, setCopied] = useState(false);
   const slug = params.slug;
 
   const component = components.find((item) => item.slug === slug);
 
   const handleCopyCode = () => {
     navigator.clipboard.writeText(component.previewCode);
-    setCopied(true); // Change to check icon
+    setCopied(true);
 
-    // Revert to copy icon after 1 second
     setTimeout(() => {
       setCopied(false);
     }, 1000);
@@ -81,7 +80,6 @@ export default function Page({ params, cond }) {
               onClick={handleCopyCode}
               className="absolute right-4 top-2 bg-gray-800 text-white px-2 py-1 rounded-md hover:bg-gray-600 flex items-center"
             >
-              {/* Conditionally render copy or check icon */}
               {copied ? <FaCheck /> : <FaRegCopy />}
             </button>
 
