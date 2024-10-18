@@ -78,7 +78,7 @@ export default function Page({ params, cond }) {
           <div className="w-full relative overflow-auto">
             <button
               onClick={handleCopyCode}
-              className="absolute right-4 top-2 bg-gray-800 text-white px-2 py-1 rounded-md hover:bg-gray-600 flex items-center"
+              className="absolute right-4 top-2 bg-black text-white px-2 py-1 rounded-md hover:bg-black/60 flex items-center"
             >
               {copied ? <FaCheck /> : <FaRegCopy />}
             </button>
