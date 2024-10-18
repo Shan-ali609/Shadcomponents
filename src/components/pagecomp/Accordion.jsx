@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
-import "@/components/pagecomp/main.css";
 
 export default function Accordion() {
   const [activeIndex, setActiveIndex] = useState(null);

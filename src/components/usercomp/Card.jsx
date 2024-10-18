@@ -4,13 +4,13 @@ import { HiChevronDoubleDown } from "react-icons/hi2";
 
 export default function Card() {
   const options = [
-    { label: "select" },
+    { label: "React js" },
     { label: "Next js" },
     { label: "Nust.js" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(options[0].label);
+  const [selectedOption, setSelectedOption] = useState("Select");
 
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);

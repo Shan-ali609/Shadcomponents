@@ -32,7 +32,7 @@ export default function Select() {
             {options.map((option, index) => (
               <div
                 key={index}
-                className="p-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-400 text-[14px] font-roboto"
+                className="p-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-400 text-[14px] "
                 onClick={() => handleoption(option)}
               >
                 {option}

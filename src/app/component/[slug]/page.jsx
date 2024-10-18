@@ -5,12 +5,30 @@ import MyDropdown from "@/components/pagecomp/Mydropdown";
 import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { FaRegCopy, FaCheck } from "react-icons/fa6"; // Import both icons
 import "@/components/leftcomp/leftside.css";
+
 export default function Page({ params, cond }) {
   const [activetab, setactivetab] = useState("preview");
+  const [copied, setCopied] = useState(false); // State for copy icon
   const slug = params.slug;
 
   const component = components.find((item) => item.slug === slug);
+
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(component.previewCode);
+    setCopied(true); // Change to check icon
+
+    // Revert to copy icon after 1 second
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
+
+  const customStyle = {
+    whiteSpace: "pre-wrap",
+    wordWrap: "break-word",
+  };
 
   if (!component) {
     return (
@@ -19,11 +37,6 @@ export default function Page({ params, cond }) {
   }
 
   const ComponentToRender = component.Component;
-
-  const customStyle = {
-    whiteSpace: "pre-wrap", // Enables text to wrap
-    wordWrap: "break-word", // Break long words when needed
-  };
 
   return (
     <>
@@ -34,7 +47,7 @@ export default function Page({ params, cond }) {
           <div className="inline-block cursor-pointer">
             <div
               className={`${
-                activetab === "preview" ? "border-b-2 " : "text-black/40 "
+                activetab === "preview" ? "border-b-2 " : "text-black/35 "
               } text-[15px] md:text-[17px] lg:text-[17px] link-tot text-black/90 font-roboto px-3 dark:border-white/85 border-black pb-1 dark:text-white/90`}
               onClick={() => setactivetab("preview")}
             >
@@ -44,7 +57,7 @@ export default function Page({ params, cond }) {
           <div className="inline-block cursor-pointer">
             <div
               className={`${
-                activetab === "code" ? "border-b-2 " : "text-black/40"
+                activetab === "code" ? "border-b-2 " : "text-black/35"
               } text-[15px] md:text-[17px] lg:text-[17px] link-tot text-black/90 font-roboto px-3 dark:border-white/85 border-black pb-1 dark:text-white/90`}
               onClick={() => setactivetab("code")}
             >
@@ -63,7 +76,15 @@ export default function Page({ params, cond }) {
             </div>
           </div>
         ) : (
-          <div className="w-full overflow-auto ">
+          <div className="w-full relative overflow-auto">
+            <button
+              onClick={handleCopyCode}
+              className="absolute right-4 top-2 bg-gray-800 text-white px-2 py-1 rounded-md hover:bg-gray-600 flex items-center"
+            >
+              {/* Conditionally render copy or check icon */}
+              {copied ? <FaCheck /> : <FaRegCopy />}
+            </button>
+
             <div className=" w-full text-wrap h-auto max-h-[400px] rounded-md dark:bg-white/5 text-white scroll-container overflow-auto my-auto">
               <SyntaxHighlighter
                 language="javascript"

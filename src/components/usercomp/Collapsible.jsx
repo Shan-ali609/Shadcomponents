@@ -11,13 +11,13 @@ export default function Collapsible() {
     <>
       <div>
         <div className=" h-[450px] flex flex-col justify-center items-center px-4  dark:text-white ">
-          <p className="text-sm flex font-bold">
+          <div className="text-sm flex font-bold">
             @peduarte starred 3 repositories{" "}
             <div onClick={show}>
               {" "}
               <Mybutton />{" "}
             </div>
-          </p>
+          </div>
 
           <div className="border w-[300px] px-[23px] py-2 rounded-md my-1 dark:text-white ">
             <p className="text-sm font-bold">@radix-ui/primitives</p>

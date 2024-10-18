@@ -58,7 +58,6 @@ const components = [
 "use client";
 import React, { useState } from "react";
 import { SlArrowDown } from "react-icons/sl";
-import "@/components/pagecomp/main.css";
 
 export default function Accordion() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -97,16 +96,16 @@ export default function Accordion() {
           >
             <h4 className=" text-[14px] dark:text-white">{item.title}</h4>
             <SlArrowDown
-              className={transform transition-transform duration-200 text-[13px] dark:text-white {
+              className={\`transform transition-transform duration-200 text-[13px] dark:text-white \${
                 activeIndex === index ? "rotate-180" : ""
-              }}
+              }\`}
             />
           </div>
           {activeIndex === index && (
             <div
-              className={px-4 py-2 bg-gray-50 dark:bg-black dark:text-white {
+              className={\`px-4 py-2 bg-gray-50 dark:bg-black dark:text-white \${
                 activeIndex === index ? "open" : ""
-              }}
+              }\`}
             >
               <p className="text-[14px]">{item.content}</p>
             </div>
@@ -338,12 +337,12 @@ import React, { useState } from "react";
 import Calendar from "../pagecomp/Calendar";
 
 function Mycalendar() {
-const [selectedDate, setSelectedDate] = useState("");
-const [showCalendar, setShowCalendar] = useState(false);
-const [currentMonth, setCurrentMonth] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState("");
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [currentMonth, setCurrentMonth] = useState(new Date());
 
   const daysInMonth = new Date(
-   currentMonth.getFullYear(),
+    currentMonth.getFullYear(),
     currentMonth.getMonth() + 1,
     0
   ).getDate();
@@ -372,11 +371,9 @@ const [currentMonth, setCurrentMonth] = useState(new Date());
 
   const renderDays = () => {
     const daysArray = [];
-
     for (let i = 0; i < firstDayOfMonth; i++) {
-      daysArray.push(<div key={empty-/{i}} className="p-2"></div>);
+      daysArray.push(<div key={\`empty-\${i}\`} className="p-2"></div>);
     }
-
     for (let day = 1; day <= daysInMonth; day++) {
       daysArray.push(
         <div
@@ -390,6 +387,7 @@ const [currentMonth, setCurrentMonth] = useState(new Date());
     }
     return daysArray;
   };
+
   return (
     <div className="relative w-80 py-64 flex items-center">
       <Calendar
@@ -397,13 +395,17 @@ const [currentMonth, setCurrentMonth] = useState(new Date());
         changeMonth={changeMonth}
         renderDays={renderDays}
       />
+      {selectedDate && (
+        <div className="absolute top-0 left-0 p-4 bg-white dark:bg-black rounded-md shadow-md">
+          Selected Date: {selectedDate}
+        </div>
+      )}
     </div>
   );
 }
 
 export default Mycalendar;
 
-        
     `,
     Component: Mycalendar,
   },
@@ -603,8 +605,10 @@ export default function Checkbox() {
     slug: "collapsible",
     text: "An interactive component which expands/collapses a panel.",
     previewCode: `
+"use client"    
 import React, { useState } from "react";
-import Mybutton from "../pagecomp/Mybutton";
+import { SlArrowDown } from "react-icons/sl";
+import { SlArrowUp } from "react-icons/sl";
 
 export default function Collapsible() {
   const [openit, setOpenit] = useState(false);
@@ -616,13 +620,19 @@ export default function Collapsible() {
     <>
       <div>
         <div className=" h-[450px] flex flex-col justify-center items-center px-4  dark:text-white ">
-          <p className="text-sm flex font-bold">
+          <div className="text-sm flex font-bold">
             @peduarte starred 3 repositories{" "}
             <div onClick={show}>
-              {" "}
-              <Mybutton />{" "}
+              <div className="flex flex-col px-2 py-1 border-none rounded-md cursor-pointer   ">
+                <div className="h-2">
+                  <SlArrowUp className="h-[8px]" />
+                </div>
+                <div>
+                  <SlArrowDown className="h-[8px]" />
+                </div>
+              </div>
             </div>
-          </p>
+          </div>
 
           <div className="border w-[300px] px-[23px] py-2 rounded-md my-1 dark:text-white ">
             <p className="text-sm font-bold">@radix-ui/primitives</p>
@@ -643,7 +653,6 @@ export default function Collapsible() {
     </>
   );
 }
-
 
     `,
     Component: Collapsible,
@@ -894,7 +903,7 @@ export default function Datatable() {
         <div className="border dark:border-white/20 py-5 rounded-md  overflow-y-auto">
           <div className="flex gap-5 md:gap-[50px] min-w-[600px] border-b dark:border-white/20 pb-3 text-gray-400 dark:text-white/50 text-[15px] font-roboto">
             <h2 className="w-[40px] text-center">
-              <input type="checkbox" />
+              <input type="checkbox" className=" cursor-pointer" />
             </h2>
             <h2 className="w-[100px] sm:w-[120px] md:w-[150px]">Status</h2>
             <h2 className="w-[150px] sm:w-[200px] md:w-[220px]">Email</h2>
@@ -907,8 +916,8 @@ export default function Datatable() {
               className="flex gap-5 md:gap-11 min-w-[600px] items-center py-3 border-b dark:border-white/20 text-gray-700 dark:text-white text-[14px]"
               key={index}
             >
-              <div className="w-[40px] text-center">
-                <input type="checkbox" />
+              <div className="w-[40px] text-center ">
+                <input type="checkbox" className="cursor-pointer" />
               </div>
               <div className="w-[100px] sm:w-[120px] md:w-[150px]">
                 {item.statusbar}
@@ -927,7 +936,7 @@ export default function Datatable() {
     </>
   );
 }
-    
+
     `,
     Component: Datatable,
   },
@@ -978,7 +987,7 @@ export default function DatePicker() {
     const daysArray = [];
 
     for (let i = 0; i < firstDayOfMonth; i++) {
-      daysArray.push(<div key={empty-/{i}} className="p-2"></div>);
+      daysArray.push(<div key={\`empty-\${i}\`} className="p-2"></div>);
     }
 
     for (let day = 1; day <= daysInMonth; day++) {
@@ -1020,8 +1029,7 @@ export default function DatePicker() {
     </div>
   );
 }
-
-    `,
+ `,
     Component: DatePicker,
   },
 
@@ -1112,7 +1120,118 @@ export default function Alertdialog() {
     Name: "Drawer",
     slug: "drawer",
     text: "A drawer component for React.",
-    previewCode: ``,
+    previewCode: `
+"use client";
+import React, { useState } from "react";
+import { LuMinus } from "react-icons/lu";
+import { FaPlus } from "react-icons/fa6";
+
+export default function Drawer() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [counter, setCounter] = useState(200);
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleclose = () => {
+    setIsOpen(false);
+  };
+
+  const incrementCounter = () => {
+    if (counter < 400) {
+      setCounter(counter + 10);
+    }
+  };
+
+  const decrementCounter = () => {
+    if (counter > 200) {
+      setCounter(counter - 10);
+    }
+  };
+
+  return (
+    <div className="relative py-40">
+      <button
+        className="px-4 py-2 font-roboto text-[14px]  text-black border rounded-lg dark:text-white"
+        onClick={toggleDrawer}
+      >
+        Open Drawer
+      </button>
+
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black dark:bg-white opacity-50 z-30"
+          onClick={toggleDrawer}
+        ></div>
+      )}
+
+      <div
+           className={\`fixed bottom-0 left-0 w-full bg-white z-40 transition-transform duration-300 \${
+          isOpen ? "translate-y-0" : "translate-y-full"
+        } h-2/3 rounded-t-lg shadow-lg\`}
+      >
+        <div className="absolute bottom-0 mb-3 left-1/2 transform -translate-x-1/2  ">
+          <h2 className="text-lg font-bold dark:text-black ">Move Goal</h2>
+          <p className="dark:text-black">Set your daily activity goal</p>
+
+          <div className="flex items-center justify-center gap-16 mt-4">
+            <button
+              onClick={decrementCounter}
+              className="p-1 rounded-full border dark:text:white"
+            >
+              <LuMinus className="text-xl" />
+            </button>
+
+            <div className="text-7xl font-bold dark:text:white">{counter}</div>
+
+            <button
+              onClick={incrementCounter}
+              className="p-1 rounded-full border dark:text:white "
+            >
+              <FaPlus className="text-xl" />
+            </button>
+          </div>
+          <div>
+            <p className="text-xs text-center dark:text:white ">CALORIES/DAY</p>
+          </div>
+
+          <div className="flex items-end gap-2 overflow-hidden  mt-9">
+            <div className="bg-black dark:text:white w-[22px] h-[100px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[55px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[80px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[60px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[40px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[65px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[35px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[75px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[45px]"></div>
+            <div className="bg-black dark:text:white w-[22px] h-[55px]"></div>
+          </div>
+
+          <div className="flex flex-col w-full pt-4 gap-3 ">
+            <button
+              type="button"
+              className="w-full border-2 bg-black text-white dark:bg-black  py-1 rounded-sm"
+              onClick={handleclose}
+            >
+              Submit
+            </button>
+            <button
+              type="button"
+              className="w-full border-2  text-black dark:text:white py-1 rounded-sm"
+              onClick={handleclose}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+    
+    `,
     Component: Drawer,
   },
   {
@@ -1262,6 +1381,40 @@ export default function Input() {
     Name: "input-OTP",
     slug: "input-otp",
     text: "Accessible one-time password component with copy paste functionality.",
+    previewCode: `
+import React, { useState } from 'react';
+
+export default function OTPInput() {
+  const [otp, setOtp] = useState(['', '', '','', '', '']); 
+
+  const handleChange = (value, index) => {
+    const newOtp = [...otp];
+    newOtp[index] = value.slice(-1); 
+    setOtp(newOtp);
+
+    if (value && index < otp.length - 1) {
+      document.getElementById(\`otp-input-\${index + 1}\`).focus();
+    }
+  };
+
+  return (
+    <div className="flex gap-2 py-48 px-7 ">
+      {otp.map((value, index) => (
+        <input
+          key={index}
+          id={\`otp-input-\${index}\`}
+          type="text"
+          value={value}
+          maxLength="1"
+          onChange={(e) => handleChange(e.target.value, index)}
+          className="w-10 h-10 text-center text-lg border dark:border-white/20 border-gray-300 dark:bg-black rounded-md focus:outline-none focus:ring-2 dark:focus:ring-white "
+        />
+      ))}
+    </div>
+  );
+}
+    
+    `,
     Component: OTPInput,
   },
   {
@@ -1331,6 +1484,144 @@ export default function Menubar() {
     slug: "navigation-menu",
     text: "A collection of links for navigating websites.",
     previewCode: `
+import React, { useState } from "react";
+import { SlArrowDown } from "react-icons/sl";
+
+export default function Navigationmenu() {
+  const [hoveredItem, setHoveredItem] = useState(null);
+
+  const handleMouseEnter = (item) => {
+    setHoveredItem(item);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredItem(null);
+  };
+
+  return (
+    <div className="flex gap-11 py-44 px-7">
+      <div
+        className="relative  text-[14px] flex items-center gap-3 cursor-pointer dark:text-white "
+        onMouseEnter={() => handleMouseEnter("gettingStarted1")}
+        onMouseLeave={handleMouseLeave}
+      >
+        <p className="font-roboto dark:text-white/70 ">Getting started</p>
+        <SlArrowDown
+          className={\`transform transition-transform duration-300 \${
+            hoveredItem === "gettingStarted1" ? "rotate-180" : ""
+          }\`}
+        />
+
+        {hoveredItem === "gettingStarted1" && (
+          <div className="absolute  text-[14px] top-full left-0 dark:text-white dark:bg-black  w-[380px] lg:w-[540px] p-4 bg-white border rounded-lg shadow-lg">
+            <div className="flex flex-wrap md:flex-nowrap gap-2">
+              <div className="w-full md:max-w-48 lg:max-w-48 h-[50px] md:h-[220px] lg:h-[220px]  bg-gray-400/35 text-center flex items-end">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div
+        className="relative  font-roboto text-[14px] flex items-center gap-3 cursor-pointer dark:text-white"
+        onMouseEnter={() => handleMouseEnter("Components")}
+        onMouseLeave={handleMouseLeave}
+      >
+        <p className="dark:text-white/70">Components</p>
+        <SlArrowDown
+          className={\`transform transition-transform duration-300 \${
+            hoveredItem === "Components" ? "rotate-180" : ""
+          }\`}
+        />
+
+        {hoveredItem === "Components" && (
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-[380px] sm:w-[440px] md:w-[470px] lg:w-[530px] z-50  p-2 dark:text-white dark:bg-black  bg-white border rounded-lg shadow-lg">
+            <div className="flex gap-3">
+              <div className="flex flex-col gap-3">
+                <div className="hover:bg-gray-300/30 dark:hover:bg-white/10 ">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+
+                <div className="hover:bg-gray-300/30">
+                  <h2 className="font-roboto">Hide</h2>
+                  <p className="text-[12px] text-black/70">
+                    Lorem ipsum, dolor seat non, nemo quas nisi aut, am!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="relative  font-roboto text-[14px]  flex items-center gap-3 cursor-pointer dark:text-white">
+        Documentation
+      </div>
+    </div>
+  );
+}
     
     `,
     Component: Navigationmenu,
@@ -1462,6 +1753,33 @@ export default function Popover() {
     Name: "Progress",
     slug: "progress",
     text: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    previewCode: `
+import React, { useEffect, useState } from "react";
+
+export default function Progress() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setProgress(50);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <div className="h-3 w-80 bg-gray-300 dark:bg-gray-400 rounded-lg my-44">
+        <div
+          className={\`rounded-lg h-3 bg-black dark:bg-white transition-all duration-500\`}
+          style={{ width: \`\${progress}%\` }}
+        />
+      </div>
+    </>
+  );
+}
+    
+    `,
     Component: Progress,
   },
   {
@@ -1548,6 +1866,94 @@ export default function Resizable() {
     Name: "Form",
     slug: "form",
     text: "Renders an accessible label associated with controls.",
+    previewCode: `
+import React, { useState } from "react";
+
+const Form = () => {
+  const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
+  const [showToast, setShowToast] = useState(false);
+  const [submittedUsername, setSubmittedUsername] = useState("");
+
+  const handleChange = (e) => {
+    setUsername(e.target.value);
+    if (e.target.value.length >= 2) {
+      setError("");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (username.length < 2) {
+      setError("Username must be at least 2 characters.");
+      return;
+    }
+
+    setSubmittedUsername(username);
+    setShowToast(true);
+    setUsername("");
+
+    setTimeout(() => {
+      setShowToast(false);
+      setSubmittedUsername("");
+    }, 6000);
+  };
+
+  return (
+    <div className="my-44 ">
+      <form onSubmit={handleSubmit}>
+        <label
+          className={\`block mb-2 text-sm font-medium \${
+            error ? "text-red-500" : "text-gray-700 dark:text-white "
+          }\`}
+        >
+          Username
+        </label>
+        <input
+          id="username"
+          type="text"
+          value={username}
+          onChange={handleChange}
+          className=" w-[230px] md:w-[380px]  px-2 py-1 border dark:border-white/15 outline-none dark:bg-black rounded-md"
+          placeholder="Shadcn"
+        />
+        <p className="text-[13px] font-raleway dark:text-white/70">
+          This is your public display name.
+        </p>
+        {error && <p className="text-red-500 text-sm">{error}</p>}
+        <button
+          type="submit"
+          className="mt-4 w-[70px] md:w-[80px] bg-black dark:bg-white dark:text-black text-white py-1 md:py-[6px] rounded-md hover:bg-black/80"
+        >
+          Submit
+        </button>
+      </form>
+
+      {showToast && (
+        <div
+          className={\`fixed flex items-center z-50 border dark:border-white/40  bg-white dark:bg-black dark:text-white text-black px-4 py-5 rounded-md shadow-lg transition-all duration-300 \${
+            window.innerWidth <= 640
+              ? "top-5 left-1/2 transform -translate-x-1/2"
+              : "bottom-5 right-5"
+          }\`}
+          style={{
+            top: window.innerWidth <= 640 ? "20px" : "auto",
+            bottom: window.innerWidth > 640 ? "20px" : "auto",
+            right: window.innerWidth > 640 ? "20px" : "auto",
+            left: window.innerWidth <= 640 ? "50%" : "auto",
+            transform: window.innerWidth <= 640 ? "translateX(-50%)" : "none",
+          }}
+        >
+          Username: {submittedUsername}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Form;
+    
+    `,
     Component: Form,
   },
 
@@ -1633,7 +2039,7 @@ export default function Select() {
             {options.map((option, index) => (
               <div
                 key={index}
-                className="p-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-400 text-[14px] font-roboto"
+                className="p-2 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-400 text-[14px]"
                 onClick={() => handleoption(option)}
               >
                 {option}
@@ -1682,18 +2088,227 @@ export default function Separator() {
     Name: "Sheet",
     slug: "sheet",
     text: "Extends the Dialog component to display content that complements the main content of the screen.",
+    previewCode: `
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
+
+export default function Alertdialog() {
+  const [openit, setOpenit] = useState(false);
+
+  const isopen = () => setOpenit(true);
+  const isclose = () => setOpenit(false);
+
+  return (
+    <>
+      <div className="w-full flex justify-center items-center py-44">
+        <Link
+          href="#"
+          onClick={isopen}
+          className="mx-auto border dark:border-white/20 text-[13px] font-roboto px-3 py-3 rounded-md dark:text-white dark:hover:bg-white/10 hover:bg-gray-100"
+        >
+          open
+        </Link>
+      </div>
+
+      {openit && (
+        <div className="fixed w-full inset-y-0 top-0 flex justify-end right-0 bg-black dark:bg-black dark:bg-opacity-50 bg-opacity-50 z-50">
+          <div className="sheet bg-white p-6 rounded-md shadow-md w-[286px] md:w-[450px] lg:w-[450px] dark:bg-black dark:border-white/20">
+            <h2 className="text-lg font-roboto text-center md:text-left lg:text-left dark:text-white">
+              Edit Profile
+            </h2>
+            <p className="text-[15px] text-gray-500 dark:text-white/50">
+              Make changes to your profile here. Click save when you are done.
+            </p>
+            <div>
+              <div className="flex gap-2 py-3 justify-center md:justify-end lg:justify-end">
+                <p className="text-[14px] dark:text-white">Name</p>
+                <input
+                  className="border dark:border-white/20 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white"
+                  type="text"
+                  placeholder="Name..."
+                />
+              </div>
+              <div className="flex gap-2 py-3 justify-center md:justify-end lg:justify-end">
+                <p className="text-[14px] dark:text-white">Username</p>
+                <input
+                  className="border dark:border-white/20 rounded-sm pl-2 dark:bg-black dark:placeholder:text-white"
+                  type="text"
+                  placeholder="Username..."
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap-reverse md:justify-end mt-4 gap-2 w-full">
+              <button
+                onClick={isclose}
+                className="border px-3 py-1 rounded-md bg-black text-white dark:bg-white dark:text-black"
+              >
+                Save Changes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+    
+    `,
     Component: Sheet,
   },
   {
     Name: "Slider",
     slug: "slider",
     text: "An input where the user selects a value from within a given range.",
+    previewCode: `
+import React, { useState } from "react";
+
+export default function CustomSlider() {
+  const [value, setValue] = useState(50);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return (
+    <div className="py-44 px-12 md:px-10 lg:px-8 flex flex-col items-center">
+      <div className="relative w-96">
+        <input
+          className="absolute inset-0 w-full h-2 bg-gray-300 rounded-lg cursor-pointer"
+          type="range"
+          min="0"
+          max="100"
+          value={value}
+          onChange={handleChange}
+          style={{
+            background: \`linear-gradient(to right, #5F9FD8 0%, #5F9FD8 \${value}%, #e4eeed \${value}%, #e4eeed 100%)\`,
+            appearance: "none",
+          }}
+        />
+        <div style={{ left: \`calc(\${value}% - 12.5px)\` }} />
+      </div>
+      <div className="text-lg font-semibold mt-4">{value}</div>
+    </div>
+  );
+}
+    
+    `,
     Component: Slider,
   },
   {
     Name: "Tabs",
     slug: "tabs",
     text: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    previewCode: `
+"use client";
+import React, { useState } from "react";
+
+export default function Tabs() {
+  const [activeTab, setActiveTab] = useState("account");
+
+  return (
+    <>
+      <div className=" w-400px dark:text-white px-5 sm:py-10 md:py-16 lg:py-24 pb-3">
+        <div className="flex justify-between items-center rounded-sm  bg-black/5 dark:bg-white/10 h-10">
+          <button
+            className={\`  ml-3 px-[50px] rounded-lg h-8 \${
+              activeTab === "account" ? "bg-white/80 dark:bg-black" : "  "
+            }\`}
+            onClick={() => setActiveTab("account")}
+          >
+            Account
+          </button>
+          <button
+            className={\` mr-3 px-[50px] rounded-lg h-8 \${
+              activeTab === "password" ? "bg-white/80 dark:bg-black" : " "
+            }\`}
+            onClick={() => setActiveTab("password")}
+          >
+            Password
+          </button>
+        </div>
+        <div>
+          {activeTab === "account" ? (
+            <div className=" border dark:border-white/20 rounded-sm mt-2  ">
+              <div className="Tabs bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  ">
+                <h2 className="text-lg font-roboto text-center md:text-left  lg:text-left dark:text-white">
+                  Account
+                </h2>
+                <p className="text-[15px] text-gray-500 dark:text-white/50">
+                  Make changes to your profile here. Click save when you are
+                  done.
+                </p>
+
+                <div>
+                  <div className=" py-3 ">
+                    <p className=" text-md">Name</p>
+                    <input
+                      className=" border dark:border-white/20 rounded-sm pl-2 w-full dark:bg-black"
+                      type="text"
+                      placeholder="Name.."
+                    />
+                  </div>
+                  <div>
+                    <p className=" text-md">Username</p>
+                    <input
+                      className=" border dark:border-white/20 rounded-sm pl-2 w-full dark:bg-black"
+                      type="text"
+                      placeholder="Username.."
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-start mt-4">
+                  <button className=" border dark:border-white/20 px-3 py-1 text-white rounded-md bg-black">
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className=" border dark:border-white/20 rounded-sm mt-2  ">
+              <div className="Tabs bg-white dark:bg-black  px-7 py-6 rounded-md shadow-md max-w-[400px]  ">
+                <h2 className="text-lg font-roboto text-center md:text-left  lg:text-left dark:text-white">
+                  Password
+                </h2>
+                <p className="text-[15px] text-gray-500 dark:text-white/50">
+                  Change your password here. After saving you'll be logged out.
+                </p>
+
+                <div>
+                  <div className=" py-3 ">
+                    <p className=" text-md">Password</p>
+                    <input
+                      className=" border dark:border-white/20 rounded-sm pl-2 w-full dark:bg-black"
+                      type="text"
+                      placeholder=""
+                    />
+                  </div>
+                  <div>
+                    <p className=" text-md">New Password</p>
+                    <input
+                      className=" border dark:border-white/20 rounded-sm pl-2 w-full dark:bg-black"
+                      type="text"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-start mt-4">
+                  <button className=" border dark:border-white/20 px-3 py-1 text-white rounded-md bg-black">
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+    
+    `,
     Component: Tabs,
   },
 
@@ -1702,6 +2317,7 @@ export default function Separator() {
     slug: "skeleton",
     text: "A control that allows the user to toggle between checked and not checked.",
     previewCode: `
+"use client"    
 import React, { useState, useEffect } from "react";
 
 export default function Skeleton() {
@@ -1737,6 +2353,89 @@ function Landingcomp() {
     Name: "Toast",
     slug: "toast",
     text: "A control that allows the user to toggle between checked and not checked.",
+    previewCode: `
+"use client";
+import React, { useState, useEffect } from "react";
+
+function Toast() {
+  const [toasts, setToasts] = useState([]);
+  const [toastId, setToastId] = useState(1);
+
+  const handleShowToast = () => {
+    if (toasts.length > 0) {
+      setToasts([]);
+    }
+
+    const newToast = {
+      id: toastId,
+      title: "Event Added",
+      message: "You have successfully added an event.",
+    };
+
+    setToasts([newToast]);
+    setToastId((prevId) => prevId + 1);
+  };
+
+  const handleUndo = () => {
+    console.log("Undo action performed!");
+    setToasts([]);
+  };
+
+  useEffect(() => {
+    if (toasts.length > 0) {
+      const timer = setTimeout(() => {
+        setToasts([]);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toasts]);
+
+  return (
+    <div className="relative">
+      <div className="my-44 flex items-center justify-center">
+        <div className="border px-2 py-1 rounded-md">
+          <button
+            onClick={handleShowToast}
+            className="px-2 py-1 bg-white text-black rounded-md"
+          >
+            Show Toast
+          </button>
+        </div>
+      </div>
+
+      {toasts.map((toast) => (
+        <div
+          key={toast.id}
+          className="fixed flex justify-between items-center z-50 p-3 bg-white dark:bg-black text-black dark:text-white border dark:border-white/15 rounded-lg shadow-lg transition-all duration-300 w-[90vw] max-w-[350px] h-[100px] toast"
+          style={{
+            top: window.innerWidth <= 640 ? "20px" : "auto",
+            bottom: window.innerWidth > 640 ? "20px" : "auto",
+            right: window.innerWidth > 640 ? "20px" : "auto",
+            left: window.innerWidth <= 640 ? "50%" : "auto",
+            transform: window.innerWidth <= 640 ? "translateX(-50%)" : "none",
+          }}
+        >
+          <div className="flex flex-col">
+            <h4 className="font-bold text-sm">{toast.title}</h4>
+            <p className="text-sm">{toast.message}</p>
+          </div>
+          <div>
+            <button
+              onClick={handleUndo}
+              className="mt-2 px-2 py-1 bg-black text-[12px] text-white rounded-md"
+            >
+              Undo
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Toast;
+    
+    `,
     Component: Toast,
   },
 
@@ -1744,42 +2443,261 @@ function Landingcomp() {
     Name: "Switch",
     slug: "switch",
     text: "A control that allows the user to toggle between checked and not checked.",
+    previewCode: `
+import React, { useState } from "react";
+
+const Switch = () => {
+  const [isOn, setIsOn] = useState(false);
+
+  const toggleSwitch = () => {
+    setIsOn((prev) => !prev);
+  };
+
+  return (
+    <div className="flex items-center gap-2 dark:text-white py-44">
+      <div
+        onClick={toggleSwitch}
+        className={\`relative inline-flex items-center w-8 h-5 bg-gray-300 rounded-full cursor-pointer transition-colors duration-300 
+          \${
+            isOn ? "bg-black/100 dark:bg-white" : "bg-gray-300 dark:bg-white/30"
+          }\`}
+      >
+        <span
+          className={\`absolute left-0 w-4 h-4 bg-white dark:bg-black rounded-full shadow-md transition-transform duration-300 
+            \${isOn ? "translate-x-full" : "translate-x-0"}\`}
+        />
+      </div>
+      Airplane Mode
+    </div>
+  );
+};
+
+export default Switch;
+    
+    `,
     Component: Switch,
   },
   {
     Name: "Textarea",
     slug: "textarea",
     text: "Displays a form textarea or a component that looks like a textarea.",
+    previewCode: `
+import React from 'react'
+
+export default function Textarea() {
+  return (
+     <div className='w-full py-44'>
+    <div className='w-full px-5   '>
+      <textarea className=' w-full border dark:border-white/20 pl-3 overflow-hidden dark:bg-black dark:text-white dark:placeholder:text-white/70 ' placeholder='Type your message here' >Type your message here</textarea>
+    </div>
+    </div>
+  )
+}
+    
+    `,
     Component: Textarea,
   },
   {
     Name: "Toggle",
     slug: "toggle",
     text: "A two-state button that can be either on or off.",
+    previewCode: `
+import React from 'react'
+
+export default function p() {
+  return (
+    <div className='px-2  hover:bg-slate-200  hover:text-slate-400 cursor-pointer dark:text-white dark:hover:bg-gray-400 my-44 '>
+        <p className='dark:hover:opacity-75'>B</p>
+    </div>
+  )
+}    
+    `,
     Component: Toggle,
   },
   {
     Name: "Toggle Group",
     slug: "toggle-group",
     text: "A set of two-state buttons that can be toggled on or off.",
+    previewCode: `
+import React from 'react'
+
+export default function Togglegroup() {
+  return (
+    <div className='flex gap-3 dark:text-white py-44 '>
+    <p className='px-2  hover:bg-slate-200 dark:hover:bg-gray-300  hover:text-slate-400 italic  cursor-pointer'>B</p>
+    <p className='px-2  hover:bg-slate-200 dark:hover:bg-gray-300  hover:text-slate-400 italic cursor-pointer'>I</p>
+    <p className='px-2  hover:bg-slate-200 underline dark:hover:bg-gray-300 hover:text-slate-400 italic cursor-pointer'>U</p>
+     </div>
+  )
+}
+    
+    `,
     Component: Togglegroup,
   },
   {
     Name: "Tooltip",
     slug: "tooltip",
     text: "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    previewCode: `
+import React from "react";
+export default function Hovercard() {
+  return (
+    <>
+      <div className="relative group my-44">
+        <div className=" cursor-pointer dark:text-white border dark:border-white/20 px-3 py-2 font-roboto text-[14px] rounded-md">
+          <button type="button" className="">
+            Hover
+          </button>
+        </div>
+
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2  w-48 py-2  bg-white dark:bg-black border dark:border-white/20 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p className="text-center text-[13px] dark:text-white/70">
+            {" "}
+            Content about Library
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
+    
+    `,
     Component: Tooltip,
   },
   {
     Name: "Sonner",
     slug: "sonner",
     text: "An opinionated toast component for React.",
+    previewCode: `
+import React, { useState, useEffect } from "react";
+
+function Sooner() {
+  const [toasts, setToasts] = useState([]);
+  const [toastId, setToastId] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const showNewToast = () => {
+    const newToast = {
+      id: toastId,
+      Title: "Credit Edit",
+      Description: "Event has been created. Why event created?",
+    };
+
+    setToastId((prevId) => prevId + 1);
+    if (toasts.length >= 3) {
+      setToasts((prevToasts) => [...prevToasts.slice(1), newToast]);
+    } else {
+      setToasts((prevToasts) => [...prevToasts, newToast]);
+    }
+  };
+
+  const removeToast = (id) => {
+    setToasts((prevToasts) => prevToasts.filter((toast) => toast.id !== id));
+  };
+
+  useEffect(() => {
+    if (toasts.length === 0) return;
+
+    const timer = setTimeout(() => {
+      removeToast(toasts[0].id);
+    }, 50000);
+
+    return () => clearTimeout(timer);
+  }, [toasts]);
+
+  return (
+    <div className="my-44 flex items-center justify-center ">
+      <div className="dark:bg-black dark:text-white border rounded-md px-2 py-1 dark:border-white/15">
+        <button onClick={showNewToast} className="text-[14px]">
+          Show Toast
+        </button>
+      </div>
+      <div
+        className={\`fixed bottom-0 z-50 right-5 mb-4 transition-all duration-500 \${
+          isHovered ? "space-y-2" : "space-y-[-90px]"
+        }\`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {toasts.map((toast, index) => (
+          <div
+            key={toast.id}
+            className="flex mx-2 md:right-5 lg:right-5 z-50 p-4 border dark:bg-black dark:text-white dark:border-white/15 bg-white text-black rounded-lg shadow-lg animate-fadeInUp"
+          >
+            <div className="flex flex-col mr-4 ">
+              <div className="font-bold">{toast.Title}</div>
+              <p className="text-[12px]">{toast.Description}</p>
+              <div>{toast.id}</div>
+            </div>
+            <div>
+              <button
+                onClick={() => removeToast(toast.id)}
+                className="text-white dark:bg-white dark:text-black bg-black px-2 py-1 text-[11px] rounded-md hover:text-gray-300"
+              >
+                Undo
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Sooner;
+    
+    `,
     Component: Sooner,
   },
   {
     Name: "Table",
     slug: "table",
     text: "A responsive table component.",
+    previewCode: `
+import React from "react";
+
+export default function Table() {
+    const bankdetail = [
+        { Inovice: "inovice1", Status: "pending", Method: "Paypal", Salary: "25.00" },
+        { Inovice: "inovice2", Status: "approved", Method: "jazzcash", Salary: "29.00" },
+        { Inovice: "inovice3", Status: "Detail", Method: "Easypaisa", Salary: "253.00" },
+        { Inovice: "inovice5", Status: "pending", Method: "Neyapay", Salary: "25.00" },
+        { Inovice: "inovice6", Status: "Approved", Method: "Paypal", Salary: "125.00" },
+        { Inovice: "inovice7", Status: "Waiting", Method: "Paypal", Salary: "25.00" },
+        { Inovice: "Total", Salary: "$2500.00" },
+      ];
+
+  return (
+    <div className="w-full md:mx-9 lg:mx-9 overflow-auto p-4">
+      <div className="grid grid-cols-4 gap-10 border-b dark:border-white/10 pb-3 text-gray-400 dark:text-white/50">
+        <h1 className="whitespace-nowrap">Invoice</h1>
+        <h1 className="whitespace-nowrap">Status</h1>
+        <h1 className="whitespace-nowrap">Method</h1>
+        <h1 className="whitespace-nowrap text-right">Salary</h1>
+      </div>
+
+      {bankdetail.map((item, index) => (
+        <div
+          key={index}
+          className="grid grid-cols-4 gap-10 border-b dark:border-white/10 py-3 text-gray-700 dark:text-white/80"
+        >
+          <h1 className="whitespace-nowrap">{item.Inovice}</h1>
+          <h1 className="whitespace-nowrap">{item.Status}</h1>
+          <h1 className="whitespace-nowrap">{item.Method}</h1>
+          <h1 className="whitespace-nowrap text-right">{item.Salary}</h1>
+        </div>
+      ))}
+      <div className="w-full text-center py-4 font-roboto text-black/60 dark:text-white/50">
+        <p className="text-center font-raleway">
+          A list of your recent invoices.
+        </p>
+      </div>
+    </div>
+  );
+}
+    
+    
+    `,
     Component: Table,
   },
 ];
