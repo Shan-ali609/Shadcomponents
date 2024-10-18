@@ -17,15 +17,15 @@ export default function Popover() {
       </button>
 
       {showPopup && (
-        <div className="absolute bottom-14    left-1/2 -translate-x-1/2  bg-gray-600/50 b flex justify-center items-center gap-4 ">
-          <div className="bg-white  flex flex-col py-2 px-3  shadow-lg w-auto dark:text-white dark:bg-black  border dark:border-white/20">
+        <div className="absolute bottom-full mb-3   left-1/2 -translate-x-1/2  bg-gray-600/50 b flex justify-center items-center gap-4 ">
+          <div className="bg-white   flex flex-col py-2 px-3  shadow-lg w-[290px] md:w-[320px] dark:text-white dark:bg-black  border dark:border-white/20">
             <h2 className="text-md font-roboto ">Dimensions</h2>
             <p className="text-[14px] text-gray-400">
               Set the dimensions for the layer.
             </p>
             <div className="flex gap-4 items-center py-2">
               <label className=" text-[15px] font-roboto ">Width</label>
-              <div className="pl-[41px]">
+              <div className="md:pl-[41px] pl-[0px]">
                 <input
                   type="text"
                   className=" border rounded-sm pl-2 dark:bg-black placeholder:text-black outline-none dark:border-white/10 dark:placeholder:text-white"
@@ -47,7 +47,7 @@ export default function Popover() {
 
             <div className="flex gap-4 items-center py-2">
               <label className="text-[15px] font-roboto">Height</label>
-              <div className="pl-[35px]">
+              <div className="md:pl-[35px] pl-[1px]">
                 <input
                   type="text"
                   className=" border rounded-sm pl-2 dark:bg-black placeholder:text-black dark:border-white/10 dark:placeholder:text-white"

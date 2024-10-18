@@ -22,7 +22,7 @@ export default function Card() {
   };
   return (
     <div div className="py-10">
-      <div className="w-80 h-[299px] border dark:border-white/20 rounded-md shadow-md ">
+      <div className="w-64 sm:w-72 md:w-80 lg:w-80 h-[310px] md:h-[299px] lg:h-[299px] border dark:border-white/20 rounded-md shadow-md ">
         <div>
           <div className="flex flex-col px-4 py-4 ">
             <h1 className="text-md font-semibold dark:text-white/90 ">

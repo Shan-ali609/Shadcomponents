@@ -58,7 +58,7 @@ export default function DatePicker() {
   };
 
   return (
-    <div className="relative w-80 py-64">
+    <div className="relative w-80 mx-4 py-64">
       <div
         className="border cursor-pointer flex justify-between items-center px-4 py-2 rounded-md dark:bg-black dark:border-white/15"
         onClick={() => setShowCalendar(!showCalendar)}

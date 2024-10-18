@@ -8,8 +8,8 @@ export default function CustomSlider() {
   };
 
   return (
-    <div className="py-44 px-12 md:px-10 lg:px-8 flex flex-col items-center">
-      <div className="relative w-96">
+    <div className="py-44  md:px-10 lg:px-8 flex flex-col items-center">
+      <div className="relative w-64 md:w-96 lg:w-96 ">
         <input
           className="absolute inset-0 w-full h-2 bg-gray-300 rounded-lg cursor-pointer"
           type="range"
@@ -24,7 +24,7 @@ export default function CustomSlider() {
         />
         <div style={{ left: `calc(${value}% - 12.5px)` }} />
       </div>
-      <div className="text-lg font-semibold mt-4">{value}</div>
+      <div className="text-lg font-semibold mt-4 dark:text-white">{value}</div>
     </div>
   );
 }

@@ -56,7 +56,7 @@ function Mycalendar() {
     return daysArray;
   };
   return (
-    <div className="relative w-80 py-64 flex items-center">
+    <div className="relative mx-3 w-80 py-64 flex items-center">
       <Calendar
         currentMonth={currentMonth}
         changeMonth={changeMonth}

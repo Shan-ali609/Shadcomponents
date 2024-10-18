@@ -5,7 +5,7 @@ export default function Pagination() {
   return (
     <>
       <div className="flex gap-3 items-center cursor-pointer py-44">
-        <div className=" flex items-center gap-2 px-5 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-400 dark:text-white">
+        <div className=" flex items-center gap-2 px-1 sm:px-3 md:px-5 lg:px-5 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-400 dark:text-white">
           <SlArrowLeft className="text-[9px]" />
           <button type="button " className="font-roboto">
             Previous
@@ -19,7 +19,7 @@ export default function Pagination() {
         <div className="dark:text-white">3</div>
         <div className="dark:text-white">...</div>
 
-        <div className=" flex  items-center gap-2 px-9 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-400 dark:text-white">
+        <div className=" flex  items-center gap-2 px-1 sm:px-9 md:px-9 lg:px-9 py-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-400 dark:text-white">
           <button type="button" className="font-roboto">
             Next
           </button>
