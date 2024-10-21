@@ -37,7 +37,9 @@ export default function Accordion() {
             className="flex justify-between items-center p-4 cursor-pointer dark:hover:bg-black hover:bg-gray-100 transition-colors duration-200"
             onClick={() => toggleAccordion(index)}
           >
-            <h4 className=" text-[14px] dark:text-white">{item.title}</h4>
+            <h4 className=" text-[14px] dark:text-white font-sans font-semibold">
+              {item.title}
+            </h4>
             <SlArrowDown
               className={`transform transition-transform duration-200 text-[13px] dark:text-white ${
                 activeIndex === index ? "rotate-180" : ""

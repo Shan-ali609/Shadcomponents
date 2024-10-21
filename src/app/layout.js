@@ -4,6 +4,8 @@ import Leftside from "../components/leftcomp/Leftside";
 import Rightside from "../components/rightcomp/Rightside";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer/Footer";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { Raleway, Roboto } from "next/font/google";
 
 import React, { useState, useEffect } from "react";
@@ -41,7 +43,7 @@ export default function RootLayout({ children }) {
   }, []);
   const gridClasses =
     isleftvisible && isrightvisible
-      ? "grid-cols-[300px_1fr_300px]"
+      ? "grid-cols-[350px_1fr_375px]"
       : isleftvisible
       ? "grid-cols-[300px_1fr]"
       : isrightvisible
@@ -50,20 +52,22 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${raleway.variable} ${roboto.variable}`}>
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} ${raleway.variable} ${roboto.variable}`}
+      >
         <AppState>
           <Navbar />
           <div className={`w-full grid ${gridClasses} `}>
             {isleftvisible && (
-              <div className="overflow-auto h-screen sticky dark:bg-black hidden md:block pl-16   top-0 mt-[52px]">
+              <div className="overflow-auto h-screen sticky dark:bg-black hidden md:block pl-11 top-[52px]">
                 <Leftside />
               </div>
             )}
-            <div className="bg-white  dark:bg-black px-5 pt-4 pb-2  ">
+            <div className="bg-white  dark:bg-black px-2 sm:px-3  pt-4 pb-2  ">
               {children}
             </div>
             {isrightvisible && (
-              <div className="sticky top-0  mt-[41px] h-screen dark:bg-black hidden xl:block  ">
+              <div className="sticky top-[41px] h-screen dark:bg-black hidden xl:block  ">
                 <Rightside />
               </div>
             )}

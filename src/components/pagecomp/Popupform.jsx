@@ -27,7 +27,7 @@ export default function Popupform({
                 : sheetcond
                 ? "sheet bg-white border p-6 rounded-md shadow-md w-[286px] md:w-[450px] lg:w-[450px] dark:bg-black dark:border-white/20 "
                 : "Dialog bg-white p-6 rounded-md shadow-md w-full md:max-w-[450px] lg:max-w-[450px] dark:bg-black dark:border-white/20 "
-              : "Alertdialog bg-white p-6 rounded-md  shadow-md max-w-[510px] dark:bg-black dark:border-white/20"
+              : "Alertdialog bg-white p-6 rounded-md  shadow-md max-w-[510px] border dark:bg-black dark:border-white/20"
           }`}
         >
           <h2 className="text-lg font-roboto text-center md:text-left  lg:text-left dark:text-white">
@@ -133,8 +133,8 @@ export default function Popupform({
                 onClick={onClose}
                 className={`  ${
                   dialprop
-                    ? "border px-3 py-1 rounded-md dark:text-white  "
-                    : " border px-3 w-full md:w-20  lg:w-20  py-1 rounded-md bg-white hover:bg-gray-200 "
+                    ? "border px-3 py-1 rounded-md  dark:text-white  "
+                    : " border px-3 w-full md:w-20 dark:bg-black dark:text-white  lg:w-20  py-1 rounded-md bg-white hover:bg-gray-200 "
                 } `}
               >
                 Close

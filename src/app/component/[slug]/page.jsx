@@ -24,11 +24,6 @@ export default function Page({ params, cond }) {
     }, 1000);
   };
 
-  const customStyle = {
-    whiteSpace: "pre-wrap",
-    wordWrap: "break-word",
-  };
-
   if (!component) {
     return (
       <div className="mt-32 bold dark:text-white">Component Not Found</div>
@@ -46,8 +41,8 @@ export default function Page({ params, cond }) {
           <div className="inline-block cursor-pointer">
             <div
               className={`${
-                activetab === "preview" ? "border-b-2 " : "text-black/35 "
-              } text-[15px] md:text-[17px] lg:text-[17px] link-tot text-black/90 font-roboto px-3 dark:border-white/85 border-black pb-1 dark:text-white/90`}
+                activetab === "preview" ? "border-b-2 " : "text-black/50 "
+              } text-[14px] font-sans font-bold link-tot text-black/90 px-3 dark:border-white/85 border-black pb-[8px] dark:text-white/90`}
               onClick={() => setactivetab("preview")}
             >
               Preview
@@ -56,8 +51,8 @@ export default function Page({ params, cond }) {
           <div className="inline-block cursor-pointer">
             <div
               className={`${
-                activetab === "code" ? "border-b-2 " : "text-black/35"
-              } text-[15px] md:text-[17px] lg:text-[17px] link-tot text-black/90 font-roboto px-3 dark:border-white/85 border-black pb-1 dark:text-white/90`}
+                activetab === "code" ? "border-b-2 " : "text-black/50"
+              } text-[14px] font-sans font-bold link-tot text-black/90  px-3 dark:border-white/85 border-black pb-2 dark:text-white/90`}
               onClick={() => setactivetab("code")}
             >
               Code
@@ -87,7 +82,11 @@ export default function Page({ params, cond }) {
               <SyntaxHighlighter
                 language="javascript"
                 style={darcula}
-                customStyle={customStyle}
+                customStyle={{
+                  whiteSpace: "pre-wrap",
+                  wordWrap: "break-word",
+                  padding: "45px",
+                }}
                 wrapLongLines={true}
               >
                 {component.previewCode}

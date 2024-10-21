@@ -20,6 +20,8 @@ module.exports = {
       fontFamily: {
         raleway: ["var(--font-raleway)", "sans-serif"],
         roboto: ["var(--font-roboto)", "sans-serif"],
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
       },
       screens: {
         1285: "1285px",
@@ -41,6 +43,9 @@ module.exports = {
       animation: {
         fadeInUp: "fadeInUp 0.5s forwards",
         fadeInOut: "fadeInOut 0.5s forwards",
+      },
+      colors: {
+        fontcolor: "hsl(240, 10%, 3.9%)",
       },
     },
   },

@@ -29,14 +29,14 @@ export default function MyDropdown({ data, cond }) {
         onClick={toggleDropdown}
       >
         <h4
-          className={`${
+          className={` font-sans ${
             cond
               ? "flex text-md font-normal  pl-1 dark:text-white"
               : "dark:text-white text-xs flex w-28 items-center text-gray-500"
           }`}
         >
           <span
-            className={` ${
+            className={`font-sans ${
               cond
                 ? " text-gray-700 text-[12px] dark:text-white"
                 : "text-gray-400 text-xs pr-4 dark:text-white/70"
@@ -91,7 +91,7 @@ export default function MyDropdown({ data, cond }) {
           {data.map((option, index) => (
             <div
               key={index}
-              className={` ${
+              className={` font-sans ${
                 cond
                   ? "px-6 text-[14px] py-1 cursor-pointer text-gray-500 hover:bg-gray-200 dark:hover:bg-white/15 dark:text-white"
                   : "px-6 text-[12px] rounded-lg py-1 cursor-pointer dark:text-white text-gray-500 hover:bg-neutral-200 dark:hover:bg-white/15"

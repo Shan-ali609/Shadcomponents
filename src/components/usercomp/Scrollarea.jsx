@@ -58,7 +58,7 @@ export default function Scrollarea() {
     <div className=" h-72 my-14 w-52 overflow-auto scrollbar-thin scrollbar-thumb-black/20 scrollbar-track-black/10 hover:scrollbar-thumb-gray-300 dark:scrollbar-thumb-[#2e2e2e] dark:scrollbar-track-[#121212] dark:hover:scrollbar-thumb-[#505050]">
       {detail.map((items, index) => (
         <ul key={index} className="w-full dark:text-white">
-          <li className="border-b dark:border-white/10 w-full py-2 text-gray-600">
+          <li className="border-b dark:border-white/10 w-full py-2 dark:text-white/80 text-gray-600">
             {items}
           </li>
         </ul>

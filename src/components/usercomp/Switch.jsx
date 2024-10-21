@@ -13,7 +13,7 @@ const Switch = () => {
         onClick={toggleSwitch}
         className={`relative inline-flex items-center w-8 h-5 bg-gray-300 rounded-full cursor-pointer transition-colors duration-300 
           ${
-            isOn ? "bg-black/100 dark:bg-white" : "bg-gray-300 dark:bg-white/30"
+            isOn ? "bg-blue-600 dark:bg-white" : "bg-gray-300 dark:bg-white/30"
           }`}
       >
         <span

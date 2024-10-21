@@ -25,20 +25,24 @@ export default function Card() {
       <div className="w-64 sm:w-72 md:w-80 lg:w-80 h-[310px] md:h-[299px] lg:h-[299px] border dark:border-white/20 rounded-md shadow-md ">
         <div>
           <div className="flex flex-col px-4 py-4 ">
-            <h1 className="text-md font-semibold dark:text-white/90 ">
+            <h1 className="text-md font-sans font-semibold dark:text-white/90 ">
               Create project
             </h1>
-            <p className="text-gray-400 text-[14px] Roboto dark:text-white/70 ">
+            <p className="text-gray-400 text-[14px] font-sans dark:text-white/70 ">
               Deploy your new project in one-click.
             </p>
-            <h5 className="text-[15px] pt-4 dark:text-white/90 ">Name</h5>
+            <h5 className="text-[15px] pt-4 dark:text-white/90 font-sans ">
+              Name
+            </h5>
             <input
-              className="w-full border dark:border-white/10  rounded-md pl-2 text-[15px] h-10 mt-1 dark:text-white  dark:placeholder:text-white/70 dark:bg-white/10  "
+              className="w-full border dark:border-white/10 font-sans  rounded-md pl-2 text-[15px] h-10 mt-1 dark:text-white  dark:placeholder:text-white/70 dark:bg-white/10  "
               type="text"
               placeholder="Name of your project "
             />
 
-            <h5 className="text-md pt-4 dark:text-white/90  ">Framework</h5>
+            <h5 className="text-md pt-4 dark:text-white/90  font-sans ">
+              Framework
+            </h5>
 
             <div className="relative">
               <div
