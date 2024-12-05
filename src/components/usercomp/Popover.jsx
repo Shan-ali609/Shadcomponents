@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Popover() {
   const [showPopup, setShowPopup] = useState(false);
@@ -8,62 +8,62 @@ export default function Popover() {
   };
 
   return (
-    <div className='relative'>
-      <button 
-        className="px-4 py-2 bg-blue-500 text-white rounded-md" 
+    <div className="relative my-52 ">
+      <button
+        className="px-4 py-2  bg-white text-black font-roboto text-[13px] border dark:bg-black dark:text-white rounded-md"
         onClick={togglePopup}
       >
-        Show Popup
+        Show Popover
       </button>
 
       {showPopup && (
-        <div className="absolute  bg-gray-600 bg-opacity-50 flex justify-center items-center gap-4">
-          <div className="bg-white p-6 flex flex-col gap-3 shadow-lg w-[400px]">
-            <h2 className="text-lg font-bold mb-4">Set Dimensions</h2>
-            
-            <div className="flex gap-4 items-center">
-              <label className=" text-md">Width</label>
-               <div className='pl-[41px]'>
-              <input
-                type="text"
-                className=" border rounded-xs pl-2"
-                placeholder="Enter width"
-              />
-            </div>
-            </div>
-            
-            <div className="flex gap-4 items-center">
-              <label className=" text-md">Max Width</label>
-              <div className='pl-[5px]'>
-              <input
-                type="text"
-                className=" border rounded-xs pl-2"
-                placeholder="Max width"
-              />
+        <div className="absolute bottom-full mb-3   left-1/2 -translate-x-1/2  bg-gray-600/50 b flex justify-center items-center gap-4 ">
+          <div className="bg-white   flex flex-col py-2 px-3  shadow-lg w-[290px] md:w-[320px] dark:text-white dark:bg-black  border dark:border-white/20">
+            <h2 className="text-md font-roboto ">Dimensions</h2>
+            <p className="text-[14px] text-gray-400">
+              Set the dimensions for the layer.
+            </p>
+            <div className="flex gap-4 items-center py-2">
+              <label className=" text-[15px] font-roboto ">Width</label>
+              <div className="md:pl-[41px] pl-[0px]">
+                <input
+                  type="text"
+                  className=" border rounded-sm pl-2 dark:bg-black placeholder:text-black outline-none dark:border-white/10 dark:placeholder:text-white"
+                  placeholder="50%"
+                />
               </div>
-            </div>
-            
-            <div className="flex gap-4 items-center">
-              <label className=" text-md">Height</label>
-             <div className='pl-[35px]'>
-              <input
-                type="text"
-                className=" border rounded-xs pl-2"
-                placeholder="Height"
-              />
-              </div>
-            </div>
-            
-               
-            <div className="flex gap-4 items-center">
-              <label className=" text-md">Max Height</label>
-              <input
-                type="text"
-                className=" border rounded-xs pl-2"
-                placeholder="Height"
-              />
             </div>
 
+            <div className="flex gap-4 items-center py-2">
+              <label className="text-[15px] font-roboto ">Max Width</label>
+              <div className="pl-[5px]">
+                <input
+                  type="text"
+                  className=" border rounded-sm pl-2 dark:bg-black placeholder:text-black dark:border-white/10 dark:placeholder:text-white"
+                  placeholder="200%"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-center py-2">
+              <label className="text-[15px] font-roboto">Height</label>
+              <div className="md:pl-[35px] pl-[1px]">
+                <input
+                  type="text"
+                  className=" border rounded-sm pl-2 dark:bg-black placeholder:text-black dark:border-white/10 dark:placeholder:text-white"
+                  placeholder="200px"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-center py-2">
+              <label className=" text-[15px] font-roboto">Max Height</label>
+              <input
+                type="text"
+                className=" border rounded-sm pl-2 dark:bg-black placeholder:text-black dark:border-white/10 dark:placeholder:text-white"
+                placeholder="none"
+              />
+            </div>
           </div>
         </div>
       )}

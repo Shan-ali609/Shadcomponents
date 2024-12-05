@@ -6,7 +6,7 @@
    export default function Mybutton() {
      return (
        <>
-            <div className='flex flex-col px-2 py-1 border-none rounded-md cursor-pointer hover:bg-gray-100  '>
+            <div className='flex flex-col px-2 py-1 border-none rounded-md cursor-pointer   '>
                  <div className='h-2'><SlArrowUp className='h-[8px]' /></div>
                  <div><SlArrowDown  className='h-[8px]' /></div>
                 </div> 

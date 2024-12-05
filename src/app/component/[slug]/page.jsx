@@ -1,37 +1,100 @@
 "use client";
-import components from '@/components/components';
-import Maintitle from '@/components/pagecomp/Maintitle';
-import MyDropdown from '@/components/pagecomp/Mydropdown';
-import { AiOutlineInbox } from "react-icons/ai";
-import React from 'react';
+import components from "@/components/components";
+import Maintitle from "@/components/pagecomp/Maintitle";
+import MyDropdown from "@/components/pagecomp/Mydropdown";
+import React, { useState } from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { FaRegCopy, FaCheck } from "react-icons/fa6";
+import "@/components/leftcomp/leftside.css";
 
-export default function Page({ params }) {
-    const slug = params.slug;
+export default function Page({ params, cond }) {
+  const [activetab, setactivetab] = useState("preview");
+  const [copied, setCopied] = useState(false);
+  const slug = params.slug;
 
-    const component = components.find(item => item.slug === slug);
+  const component = components.find((item) => item.slug === slug);
 
-    
-    if (!component) {
-        return <div className='mt-32 bold'>Component Not Found</div>;
-    }
+  const handleCopyCode = () => {
+    navigator.clipboard.writeText(component.previewCode);
+    setCopied(true);
 
-    const ComponentToRender = component.Component;
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
 
+  if (!component) {
     return (
-        <div>
-            <Maintitle title={component.Name} para = {component.text} />
-            <div className=' w-full   mt-9 border-2 rounded-lg h-[450px]'>
-                <div className='w-full  flex justify-between px-5 py-3 '>
-                    <div><MyDropdown data={['Default','New york' ]} /> </div>
-                    <div className='border-2  flex items-center rounded-sm'> <AiOutlineInbox className='text-md cursor-pointer  text-black ' /></div>
-                            </div>
-                <div className=' w-full flex content-center items-center h-[409px]  '>
-                <div className='h-screen w-full flex justify-center items-center'> 
-            <ComponentToRender drp={component.list} /> 
-            </div>
-            </div> 
-            </div>         
-        </div>
+      <div className="mt-32 bold dark:text-white">Component Not Found</div>
     );
+  }
+
+  const ComponentToRender = component.Component;
+
+  return (
+    <>
+      <div>
+        <Maintitle title={component.Name} para={component.text} />
+
+        <div className="flex gap-3 border-b dark:border-white/15 mt-10 mb-4">
+          <div className="inline-block cursor-pointer">
+            <div
+              className={`${
+                activetab === "preview" ? "border-b-2 " : "text-black/50 "
+              } text-[14px] font-sans font-bold link-tot text-black/90 px-3 dark:border-white/85 border-black pb-[8px] dark:text-white/90`}
+              onClick={() => setactivetab("preview")}
+            >
+              Preview
+            </div>
+          </div>
+          <div className="inline-block cursor-pointer">
+            <div
+              className={`${
+                activetab === "code" ? "border-b-2 " : "text-black/50"
+              } text-[14px] font-sans font-bold link-tot text-black/90  px-3 dark:border-white/85 border-black pb-2 dark:text-white/90`}
+              onClick={() => setactivetab("code")}
+            >
+              Code
+            </div>
+          </div>
+        </div>
+
+        {activetab === "preview" ? (
+          <div className="w-full border  border-gray-300 dark:border-white/10 rounded-lg h-fill overflow-auto my-auto">
+            <div className=" w-full flex justify-between px-1 pt-7 pb-5">
+              <MyDropdown cond={false} data={["New york", "Default"]} />
+            </div>
+            <div className="w-full flex justify-center items-center h-auto">
+              <ComponentToRender drp={component.list} />
+            </div>
+          </div>
+        ) : (
+          <div className="w-full relative overflow-auto">
+            <button
+              onClick={handleCopyCode}
+              className="absolute right-4 top-2 bg-black text-white px-2 py-1 rounded-md hover:bg-black/60 flex items-center"
+            >
+              {copied ? <FaCheck /> : <FaRegCopy />}
+            </button>
+
+            <div className=" w-full text-wrap h-auto max-h-[400px] rounded-md dark:bg-white/5 text-white scroll-container overflow-auto my-auto">
+              <SyntaxHighlighter
+                language="javascript"
+                style={darcula}
+                customStyle={{
+                  whiteSpace: "pre-wrap",
+                  wordWrap: "break-word",
+                  padding: "45px",
+                }}
+                wrapLongLines={true}
+              >
+                {component.previewCode}
+              </SyntaxHighlighter>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
 }
-      

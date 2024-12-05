@@ -1,9 +1,4 @@
-import Main from "@/components/pagecomp/Accordion";
-import Maintitle from "@/components/pagecomp/Maintitle";
-
+import React from "react";
 export default function Home() {
-  return (
-    <>
-    </> 
-  );
+  return <></>;
 }
